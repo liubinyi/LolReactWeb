@@ -1,12 +1,16 @@
 import React from "react"
 import Moment from 'react-moment';
+import { connect } from "react-redux";
+
 import ImageIcon from './ImageIcon';
-import { connect } from "react-redux"
-import { fetchSummoner } from "../actions/summonerInfoAction"
+
+
+import { fetchSummoner } from "../actions/summonerInfoAction";
 
 @connect((store) => {
   return {
-    summonerInfo: store.summonerInfo.summonerInfo
+    summonerInfo: store.summonerInfo.summonerInfo,
+    championStats: store.championStats
   };
 })
 
@@ -15,7 +19,7 @@ export default class SearchBox extends React.Component {
 	getSummonerInfo(event) {
 		event.preventDefault();
 		const summonerName = this.refs.createInput.value;
-		this.props.dispatch(fetchSummoner(summonerName))
+		this.props.dispatch(fetchSummoner(summonerName));
 	}
 
 	getModifiedDate(revisionDate) {
@@ -25,9 +29,13 @@ export default class SearchBox extends React.Component {
 		);
 	}
 
+
 	render()
 	{
-		const {summonerInfo} = this.props;
+		const {summonerInfo, championStats} = this.props;
+		const divStyle = {
+			  display: 'inline-block'
+		}
 
 		if (summonerInfo.id == 0) {
 	      return (
@@ -36,17 +44,22 @@ export default class SearchBox extends React.Component {
 					<input type="text" placeholder="summoner name" ref="createInput" />
 					<button onClick={this.getSummonerInfo.bind(this)}>Search</button>
 				</form>
-				<h1>  </h1>
 			</div>
 			);
 	    }
 
 		return (
 			<div>
-	       	 	<h1> {summonerInfo.name} </h1>
-	       	 	<h2> Level {summonerInfo.summonerLevel} </h2>
-	       	 	{this.getModifiedDate(summonerInfo.revisionDate)}
-	       	 	<ImageIcon iconId={summonerInfo.profileIconId}/>
+				<form>
+					<input type="text" placeholder="summoner name" ref="createInput" />
+					<button onClick={this.getSummonerInfo.bind(this)}>Search</button>
+				</form>
+				<div style={divStyle}>
+					<ImageIcon iconId={summonerInfo.profileIconId}/>
+				</div>
+				<div style={divStyle}>
+					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
+				</div>
 	      	</div>
 		);
 	}
