@@ -12,3 +12,11 @@ export function fetchChampionStats() {
       })
   }
 }
+
+
+export function fetchChamptionStatsDetails(stats) {
+  return {
+    type: 'LOAD_CHAMPION_STATS_DETAILS',
+    payload: stats
+  }
+}

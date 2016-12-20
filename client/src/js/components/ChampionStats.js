@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import { fetchChampionStats } from "../actions/championStatsAction";
+import { fetchChampionStats,fetchChamptionStatsDetails } from "../actions/championStatsAction";
+
 import ImageIcon from './ImageIcon';
+import SingleChampionStats from './SingleChampionStats';
 
 import _ from 'lodash';
 
@@ -22,28 +24,17 @@ export default class ChampionStats extends React.Component {
 		this.props.dispatch(fetchChampionStats());
 	}
 
-	displayChampions(data) {
 
-		const divStyle = {
-		 	  width: '50',
-			  height: '50',
-			  display: 'inline-block'
-			}
+	getSingleChampionAbilities(event) {
+		//this.props.dispatch(fetchChamptionStatsDetails(stats))
 
-		var graphs = Object.values(data).map(champ =>
-   			 <div key={champ.id} style={divStyle} title={champ.name}>
-   			 	<ImageIcon championKey={champ.key} onClick={this.getChampionAbilities.bind(this)}/>	
-   			 </div>
-		);
-
-		return graphs;
-	}
-
-	getChampionAbilities(stats) {
-		//fire up an event generate a new componet
-		return (
-			<h1> Stop Here</h1>
-		);
+		//this.props.championStats.championStatsInfo[event.target.className].stats
+		
+		event.preventDefault();
+		const key = [event.target.className];
+		const stats = this.props.championStats.championStatsInfo[key].stats;
+		//this.props.dispatch(fetchChamptionStatsDetails(stats))
+		console.log("OKKKKK")
 	}
 
 
@@ -58,11 +49,15 @@ export default class ChampionStats extends React.Component {
 			</div>
 			);
 		}
-		
+
+		// if (championStats.singleChamptionstats.hp != null) {
+		// 	return (
+		// 	 <h1> jax </h1>
+		// 	);	
+		// }
+
 		return (
-			<div>
-				{this.displayChampions(championStats.championStatsInfo)}
-			</div>	
+			<SingleChampionStats championStatsInfo={championStats.championStatsInfo} event={this.getSingleChampionAbilities.bind(this)} />
 		);		
 	}
 }

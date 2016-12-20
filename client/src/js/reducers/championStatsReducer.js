@@ -2,6 +2,7 @@ export default function reducer(state={
     championStatsInfo: {},
     fetched: false,
     error: null,
+    singleChamptionstats:{}
   }, action) {
 
     switch (action.type) {
@@ -19,6 +20,13 @@ export default function reducer(state={
           errpr: action.payload,
         }
       }
+      // case "LOAD_CHAMPION_STATS_DETAILS": {
+      //   return {
+      //      ...state,
+      //     fetched: true,
+      //     singleChamptionstats:action.payload
+      //   }
+      // }
     }
 
     return state

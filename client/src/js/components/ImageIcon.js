@@ -26,14 +26,14 @@ export default class ImageIcon extends React.Component {
 			};
 
 			const divStyle = {
-		 	  width: '100',
+		 	  width: '50',
 			  height: '50',
 			  display: 'inline-block'
 			}
 
 			return (		
 				<div style={divStyle}>
-					<img src={url} style={imageStyle}/>
+					<img src={url} style={imageStyle} className={this.props.championKey}/>
 				</div>			
 			);
 		}
