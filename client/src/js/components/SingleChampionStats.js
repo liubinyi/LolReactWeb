@@ -15,9 +15,12 @@ export default class SingleChampionStats extends React.Component {
 	   			 	<ImageIcon championKey={champ.key} />	
 				 </div>
 		);
+
+		const mainDivStyle = {
+			 	 width: '400',
+		}
 		return (
-			// <h1> cool </h1>	
-			<div>
+			<div style={mainDivStyle}>
 				{graphs}
 			</div>
 		);

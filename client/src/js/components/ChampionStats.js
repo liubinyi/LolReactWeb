@@ -5,6 +5,7 @@ import { fetchChampionStats,fetchChamptionStatsDetails } from "../actions/champi
 
 import ImageIcon from './ImageIcon';
 import SingleChampionStats from './SingleChampionStats';
+import SinglechamptionStatsDetail from './SinglechamptionStatsDetail';
 
 import _ from 'lodash';
 
@@ -12,7 +13,8 @@ import _ from 'lodash';
 
 @connect((store) => {
   return {
-    championStats: store.championStats
+    championStats: store.championStats,
+    singleChamptionstats: store.singleChamptionstats
   };
 })
 
@@ -26,20 +28,18 @@ export default class ChampionStats extends React.Component {
 
 
 	getSingleChampionAbilities(event) {
-		//this.props.dispatch(fetchChamptionStatsDetails(stats))
 
-		//this.props.championStats.championStatsInfo[event.target.className].stats
-		
 		event.preventDefault();
 		const key = [event.target.className];
 		const stats = this.props.championStats.championStatsInfo[key].stats;
-		//this.props.dispatch(fetchChamptionStatsDetails(stats))
-		console.log("OKKKKK")
+		stats.level = 1;
+		this.props.dispatch(fetchChamptionStatsDetails(stats))
+		//console.log("OKKKKK")
 	}
 
 
 	render() {
-		const {championStats} = this.props;
+		const {championStats,singleChamptionstats} = this.props;
 
 		if (championStats.fetched == false) {
 			this.getChampionStats();
@@ -50,11 +50,18 @@ export default class ChampionStats extends React.Component {
 			);
 		}
 
-		// if (championStats.singleChamptionstats.hp != null) {
-		// 	return (
-		// 	 <h1> jax </h1>
-		// 	);	
-		// }
+		const singleStyle = {
+	 	 float: 'right'
+		}
+
+		if (championStats.singleChamptionstats.hp != null) {
+			return (
+				<div>
+					<SinglechamptionStatsDetail style={singleStyle} champAbility = {championStats.singleChamptionstats} />
+					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} event={this.getSingleChampionAbilities.bind(this)} />
+				</div>
+			);	
+		}
 
 		return (
 			<SingleChampionStats championStatsInfo={championStats.championStatsInfo} event={this.getSingleChampionAbilities.bind(this)} />
