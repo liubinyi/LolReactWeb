@@ -7,17 +7,21 @@ export default class SingleChampionStats extends React.Component {
 		const divStyle = {
 	 	 width: '50',
 		 height: '50',
-		 display: 'inline-block'
+		 display: 'inline-block',
+		 opacity: 0.5,
+		 backgroundColor: 'black',
+		 marginRight: '10'
 		}
 
 		const graphs = Object.values(this.props.championStatsInfo).map(champ =>
-	   			 <div key={champ.id} style={divStyle} title={champ.name} onClick={this.props.event}>
+	   			 <div id={champ.key} key={champ.id} style={divStyle} title={champ.name} onClick={this.props.event} onMouseEnter={(event) => this.props.hover(1,event)} onMouseLeave={(event) => this.props.hover(0.5,event)}>
 	   			 	<ImageIcon championKey={champ.key} />	
 				 </div>
 		);
 
 		const mainDivStyle = {
-			 	 width: '400',
+			 	 width: '500',
+			 	 backgroundColor:'black'
 		}
 		return (
 			<div style={mainDivStyle}>

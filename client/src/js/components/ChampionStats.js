@@ -33,8 +33,14 @@ export default class ChampionStats extends React.Component {
 		const key = [event.target.className];
 		const stats = this.props.championStats.championStatsInfo[key].stats;
 		stats.level = 1;
+		stats.key = key;
 		this.props.dispatch(fetchChamptionStatsDetails(stats))
 		//console.log("OKKKKK")
+	}
+
+	changeOpacity (num,event) {
+		//event.preventDefault();
+		document.getElementById(event.target.className).style.opacity = num
 	}
 
 
@@ -57,14 +63,22 @@ export default class ChampionStats extends React.Component {
 		if (championStats.singleChamptionstats.hp != null) {
 			return (
 				<div>
-					<SinglechamptionStatsDetail style={singleStyle} champAbility = {championStats.singleChamptionstats} />
-					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} event={this.getSingleChampionAbilities.bind(this)} />
+					<SinglechamptionStatsDetail style={singleStyle} 
+					champAbility = {championStats.singleChamptionstats} />
+					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
+					event={this.getSingleChampionAbilities.bind(this)}
+					hover={this.changeOpacity.bind(this)}
+					/>
 				</div>
 			);	
 		}
 
 		return (
-			<SingleChampionStats championStatsInfo={championStats.championStatsInfo} event={this.getSingleChampionAbilities.bind(this)} />
+			<SingleChampionStats 
+				championStatsInfo={championStats.championStatsInfo} 
+				event={this.getSingleChampionAbilities.bind(this)} 
+				hover= {this.changeOpacity.bind(this)}
+			/>
 		);		
 	}
 }

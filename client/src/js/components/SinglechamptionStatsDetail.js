@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 
 import { fetchChamptionStatsDetails } from "../actions/championStatsAction";
 
+import FontAwesome from 'react-fontawesome';
+import { Button } from 'react-bootstrap';
+
 @connect((store) => {
   return {
     championStats: store.championStats,
@@ -45,14 +48,17 @@ export default class SinglechamptionStatsDetail extends React.Component {
 
 		const {championStats,singleChamptionstats} = this.props;
 
+		const textStyle = {
+			color: '#00FF00',
+			backgroundColor: 'black'
+		}
+
 		return (
-			<div>
-			 	<h2> current Level {this.props.champAbility.level} </h2>
-
-			 	<button onClick={this.levelUp.bind(this)}> Click to Increase the level </button>
-			 	<button  onClick={this.levelDown.bind(this)}> Click to decrease the level </button>
-
-
+			<div style={textStyle}>
+			 	<h2> Level {this.props.champAbility.level} </h2>
+			 	<ImageIcon championKey={this.props.champAbility.key} />
+			 	<Button onClick={this.levelUp.bind(this)} bsStyle="success"> + </Button>
+			 	<Button onClick={this.levelDown.bind(this)} bsStyle="info"> - </Button>
 				<p> attackdamage : {this.props.champAbility.attackdamage} </p>
 				<p> armor : {this.props.champAbility.armor} </p>
 				<p> movespeed : {this.props.champAbility.movespeed}</p>
