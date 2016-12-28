@@ -53,6 +53,8 @@ export default class SinglechamptionStatsDetail extends React.Component {
 			backgroundColor: 'black'
 		}
 
+		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
+
 		return (
 			<div style={textStyle}>
 			 	<h2> Level {this.props.champAbility.level} </h2>
@@ -64,6 +66,8 @@ export default class SinglechamptionStatsDetail extends React.Component {
 				<p> movespeed : {this.props.champAbility.movespeed}</p>
 				<p> hp: {this.props.champAbility.hp}   </p>
 				<p> crit : {this.props.champAbility.crit} </p>
+				<p> ablity : 0 </p>
+				<p> attackSpeed : {attackspeed} </p>
 			</div>
 		);
 	}

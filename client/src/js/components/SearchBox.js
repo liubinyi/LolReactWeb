@@ -7,6 +7,8 @@ import ImageIcon from './ImageIcon';
 
 import { fetchSummoner } from "../actions/summonerInfoAction";
 
+import { Button } from 'react-bootstrap';
+
 @connect((store) => {
   return {
     summonerInfo: store.summonerInfo.summonerInfo,
