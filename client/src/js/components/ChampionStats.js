@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import { fetchChampionStats,fetchChamptionStatsDetails } from "../actions/championStatsAction";
+import { fetchItemStats } from "../actions/itemStatsAction";
 
 import ImageIcon from './ImageIcon';
 import SingleChampionStats from './SingleChampionStats';
 import SinglechamptionStatsDetail from './SinglechamptionStatsDetail';
+import SingleItemStats from './SingleItemStats';
 
 import _ from 'lodash';
 
@@ -24,6 +26,10 @@ export default class ChampionStats extends React.Component {
 	getChampionStats() {
 		//event.preventDefault();
 		this.props.dispatch(fetchChampionStats());
+	}
+
+	getItemStats() {
+		this.props.dispatch(fetchItemStats());
 	}
 
 
@@ -49,6 +55,7 @@ export default class ChampionStats extends React.Component {
 
 		if (championStats.fetched == false) {
 			this.getChampionStats();
+			this.getItemStats();
 			return (
 			<div>			
 				<h1> fetching champion stats </h1>
@@ -74,11 +81,17 @@ export default class ChampionStats extends React.Component {
 		}
 
 		return (
-			<SingleChampionStats 
-				championStatsInfo={championStats.championStatsInfo} 
-				event={this.getSingleChampionAbilities.bind(this)} 
-				hover= {this.changeOpacity.bind(this)}
-			/>
+			<div>
+				<SingleChampionStats 
+					championStatsInfo={championStats.championStatsInfo} 
+					event={this.getSingleChampionAbilities.bind(this)} 
+					hover= {this.changeOpacity.bind(this)}
+				/>
+
+				<SingleItemStats
+					itemStatsInfo={championStats.itemStatsInfo}
+				/>
+			</div>
 		);		
 	}
 }

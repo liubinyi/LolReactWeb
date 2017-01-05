@@ -1,9 +1,12 @@
+import _ from 'lodash';
+
 export default function reducer(state={
     championStatsInfo: {},
     fetched: false,
     error: null,
     singleChamptionstats:{},
-    singleChampLevelChanged : false
+    singleChampLevelChanged : false,
+    itemStatsInfo : {}
   }, action) {
 
     switch (action.type) {
@@ -26,6 +29,15 @@ export default function reducer(state={
            ...state,
           fetched: true,
           singleChamptionstats:action.payload
+        }
+      }
+      case "LOAD_ITEM_STATS_DATA_SUCCESS" : {
+
+        const filtedItems = _.filter(Object.values(action.payload), {maps: {11:true}});
+        
+         return {
+          ...state,
+          itemStatsInfo : action.payload
         }
       }
     }
