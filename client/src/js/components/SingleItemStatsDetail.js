@@ -23,11 +23,15 @@ export default class SingleItemStatsDetail extends React.Component {
 			color: '#00FF00',
 			backgroundColor: 'black',
 			float: 'right',
+			display: 'inline-block',
+			width: '50',
+			height: '100'
 		}
 
 		return (
-			<div>
+			<div style={divStyle}>
 				<ItemImageIcon itemKey={singleItemStats.id} />
+				<p> {singleItemStats.name} </p>
 				<h4> {singleItemStats.description} </h4>
 			</div>
 		)

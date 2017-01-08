@@ -52,17 +52,11 @@ export default class SinglechamptionStatsDetail extends React.Component {
 	render() {
 
 		const {championStats,singleChamptionstats} = this.props;
-
-		const textStyle = {
-			// color: '#00FF00',
-			// backgroundColor: 'black'
-		}
-
 		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
 		const cooldown = 0;
 
 		return (
-			<div style={textStyle} className="champtionStatsDetail row" >
+			<div className="champtionStatsDetail row" >
 				<div className="col-md-2">
 					<ImageIcon championKey={this.props.champAbility.key} loadFullChampImg={true} />
 					
@@ -112,11 +106,11 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					    </tbody>
 					</table>
 				</div>
-				<div className="col-md-5">
+				<div className="col-md-4">
 					<h4> Pick Your Item To Create Best Build </h4>
 					<ItemSixGrid />
 				</div>
-				<div className="col-md-1">
+				<div className="col-md-2 itemDescription">
 
 				</div>
 			</div>
