@@ -5,6 +5,7 @@ export default function reducer(state={
     fetched: false,
     error: null,
     singleChamptionstats:{},
+    singleItemStats:{},
     singleChampLevelChanged : false,
     itemStatsInfo : {}
   }, action) {
@@ -29,6 +30,12 @@ export default function reducer(state={
            ...state,
           fetched: true,
           singleChamptionstats:action.payload
+        }
+      }
+      case "LOAD_ITEM_STATS_DETAILS": {
+        return {
+          ...state,
+          singleItemStats: action.payload
         }
       }
       case "LOAD_ITEM_STATS_DATA_SUCCESS" : {

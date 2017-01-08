@@ -20,3 +20,10 @@ export function fetchChamptionStatsDetails(stats) {
     payload: stats
   }
 }
+
+export function fetchItemStatsDetails(itemStats) {
+  return {
+    type: 'LOAD_ITEM_STATS_DETAILS',
+    payload: itemStats
+  }
+}

@@ -43,8 +43,8 @@ export default class SearchBox extends React.Component {
 	      return (
 	      	<div>
 				<form>
-					<input type="text" placeholder="summoner name" ref="createInput" />
-					<button onClick={this.getSummonerInfo.bind(this)}>Search</button>
+					<input type="text" placeholder="summoner name" ref="createInput" className="inputBox"/>
+					<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Enter Your Summonor Name...</button>
 				</form>
 			</div>
 			);
@@ -53,8 +53,8 @@ export default class SearchBox extends React.Component {
 		return (
 			<div>
 				<form>
-					<input type="text" placeholder="summoner name" ref="createInput" />
-					<button onClick={this.getSummonerInfo.bind(this)}>Search</button>
+					<input type="text" placeholder="summoner name" ref="createInput" className="inputBox"/>
+					<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Enter Your Summonor Name...</button>
 				</form>
 				<div style={divStyle}>
 					<ImageIcon iconId={summonerInfo.profileIconId}/>

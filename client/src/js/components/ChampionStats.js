@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import { fetchChampionStats,fetchChamptionStatsDetails } from "../actions/championStatsAction";
+import { fetchChampionStats,fetchChamptionStatsDetails,fetchItemStatsDetails} from "../actions/championStatsAction";
 import { fetchItemStats } from "../actions/itemStatsAction";
 
 import ImageIcon from './ImageIcon';
 import SingleChampionStats from './SingleChampionStats';
 import SinglechamptionStatsDetail from './SinglechamptionStatsDetail';
 import SingleItemStats from './SingleItemStats';
+import SingleItemStatsDetail from './SingleItemStatsDetail';
 
 import _ from 'lodash';
 
@@ -16,7 +17,8 @@ import _ from 'lodash';
 @connect((store) => {
   return {
     championStats: store.championStats,
-    singleChamptionstats: store.singleChamptionstats
+    singleChamptionstats: store.championStats.singleChamptionstats,
+    singleItemStats: store.championStats.singleItemStats
   };
 })
 
@@ -44,6 +46,13 @@ export default class ChampionStats extends React.Component {
 		//console.log("OKKKKK")
 	}
 
+	getSingleItemDetails(event) {
+		event.preventDefault();
+		const itemId = event.target.getAttribute("id");
+		const itemStats = this.props.championStats.itemStatsInfo[itemId];
+		this.props.dispatch(fetchItemStatsDetails(itemStats));
+	}
+
 	changeOpacity (num,event) {
 		//event.preventDefault();
 		document.getElementById(event.target.className).style.opacity = num
@@ -51,7 +60,7 @@ export default class ChampionStats extends React.Component {
 
 
 	render() {
-		const {championStats,singleChamptionstats} = this.props;
+		const {championStats,singleChamptionstats,singleItemStats} = this.props;
 
 		if (championStats.fetched == false) {
 			this.getChampionStats();
@@ -67,14 +76,38 @@ export default class ChampionStats extends React.Component {
 	 	 float: 'right'
 		}
 
+
+
+		if (this.props.singleItemStats.id > 0) {
+			return (
+				<div>
+					<SingleItemStatsDetail />
+					<SinglechamptionStatsDetail style={singleStyle} 
+						champAbility = {championStats.singleChamptionstats} />
+					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
+						event={this.getSingleChampionAbilities.bind(this)}
+						hover={this.changeOpacity.bind(this)}
+					/>
+					<SingleItemStats
+						itemStatsInfo={championStats.itemStatsInfo}
+						click={this.getSingleItemDetails.bind(this)}
+					/>
+				</div>
+			)
+		}
+
 		if (championStats.singleChamptionstats.hp != null) {
 			return (
 				<div>
 					<SinglechamptionStatsDetail style={singleStyle} 
-					champAbility = {championStats.singleChamptionstats} />
+						champAbility = {championStats.singleChamptionstats} />
 					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
-					event={this.getSingleChampionAbilities.bind(this)}
-					hover={this.changeOpacity.bind(this)}
+						event={this.getSingleChampionAbilities.bind(this)}
+						hover={this.changeOpacity.bind(this)}
+					/>
+					<SingleItemStats
+						itemStatsInfo={championStats.itemStatsInfo}
+						click={this.getSingleItemDetails.bind(this)}
 					/>
 				</div>
 			);	
@@ -90,6 +123,7 @@ export default class ChampionStats extends React.Component {
 
 				<SingleItemStats
 					itemStatsInfo={championStats.itemStatsInfo}
+					click={this.getSingleItemDetails.bind(this)}
 				/>
 			</div>
 		);		

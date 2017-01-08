@@ -13,7 +13,7 @@ export default class SingleItemStats extends React.Component {
 		}
 
 		const itemGraphs = Object.values(this.props.itemStatsInfo).map(item =>
-	   			 <div id={item.id} key={item.id} style={divStyle}>
+	   			 <div id={item.id} key={item.id} style={divStyle} onClick={this.props.click}>
 	   			 	<ItemImageIcon itemKey={item.id} />	
 				 </div>
 		);

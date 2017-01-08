@@ -18,7 +18,7 @@ export default class ImageIcon extends React.Component {
 			);
 		}
 
-		if (this.props.championKey != null) {
+		if (this.props.championKey != null && this.props.loadFullChampImg == null) {
 			const url = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/'+ this.props.championKey +'.png';
 			const imageStyle = {
 			  width: '50',
@@ -35,6 +35,19 @@ export default class ImageIcon extends React.Component {
 				<div style={divStyle}>
 					<img src={url} style={imageStyle} className={this.props.championKey}/>
 				</div>			
+			);
+		}
+
+
+		if (this.props.loadFullChampImg == true) {
+			const imageStyle = {
+		 	  width: '170',
+			  height: '250',
+			  border: '2px solid #00FF00'
+			}
+			const url = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+ this.props.championKey + '_0' +'.jpg';
+			return 	(
+				<img src={url} style={imageStyle} className={this.props.championKey}/>		
 			);
 		}
 	}

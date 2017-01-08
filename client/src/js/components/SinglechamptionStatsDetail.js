@@ -1,6 +1,10 @@
 import React from 'react';
-import ImageIcon from './ImageIcon';
 import { connect } from "react-redux";
+
+import ImageIcon from './ImageIcon';
+import ItemImageIcon from './ItemImageIcon';
+import ItemSixGrid from './ItemSixGrid';
+
 
 import { fetchChamptionStatsDetails } from "../actions/championStatsAction";
 
@@ -10,7 +14,8 @@ import { Button } from 'react-bootstrap';
 @connect((store) => {
   return {
     championStats: store.championStats,
-    singleChamptionstats: store.singleChamptionstats
+    singleChamptionstats: store.championStats.singleChamptionstats,
+    singleItemStats: store.championStats.singleItemStats
   };
 })
 
@@ -49,25 +54,71 @@ export default class SinglechamptionStatsDetail extends React.Component {
 		const {championStats,singleChamptionstats} = this.props;
 
 		const textStyle = {
-			color: '#00FF00',
-			backgroundColor: 'black'
+			// color: '#00FF00',
+			// backgroundColor: 'black'
 		}
 
 		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
+		const cooldown = 0;
 
 		return (
-			<div style={textStyle}>
-			 	<h2> Level {this.props.champAbility.level} </h2>
-			 	<ImageIcon championKey={this.props.champAbility.key} />
-			 	<Button onClick={this.levelUp.bind(this)} bsStyle="success"> + </Button>
-			 	<Button onClick={this.levelDown.bind(this)} bsStyle="info"> - </Button>
-				<p> attackdamage : {this.props.champAbility.attackdamage} </p>
-				<p> armor : {this.props.champAbility.armor} </p>
-				<p> movespeed : {this.props.champAbility.movespeed}</p>
-				<p> hp: {this.props.champAbility.hp}   </p>
-				<p> crit : {this.props.champAbility.crit} </p>
-				<p> ablity : 0 </p>
-				<p> attackSpeed : {attackspeed} </p>
+			<div style={textStyle} className="champtionStatsDetail row" >
+				<div className="col-md-2">
+					<ImageIcon championKey={this.props.champAbility.key} loadFullChampImg={true} />
+					
+				</div>
+				<div className="col-md-1">	
+					<h4> Level {this.props.champAbility.level} </h4>
+				 	<Button onClick={this.levelUp.bind(this)} bsStyle="success"> + </Button>
+				 	<Button onClick={this.levelDown.bind(this)} bsStyle="info"> - </Button>
+				</div>
+				<div className="col-md-3">
+					<table className="table table-condensed">
+						<thead>
+					      <tr>
+					        <th>Attributes</th>
+					        <th>Value</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td>AttackDamage</td>
+					        <td>{this.props.champAbility.attackdamage.toFixed(2)}</td>
+					      </tr>
+					      <tr>
+					        <td>Armor</td>
+					        <td>{this.props.champAbility.armor.toFixed(2)}</td>
+					      </tr>
+					      <tr>
+					        <td>Movespeed</td>
+					        <td>{this.props.champAbility.movespeed}</td>
+					      </tr>
+					      <tr>
+					        <td>Health</td>
+					        <td>{this.props.champAbility.hp.toFixed(2)}</td>
+					      </tr>
+					      <tr>
+					        <td>Critical Chance</td>
+					        <td>{this.props.champAbility.crit.toFixed(2)}</td>
+					      </tr>
+					      <tr>
+					        <td>AttackSpeed</td>
+					        <td>{attackspeed}</td>
+					      </tr>
+					        <tr>
+					        <td>CoolDown</td>
+					        <td>{cooldown}</td>
+					      </tr>
+					    </tbody>
+					</table>
+				</div>
+				<div className="col-md-5">
+					<h4> Pick Your Item To Create Best Build </h4>
+					<ItemSixGrid />
+				</div>
+				<div className="col-md-1">
+
+				</div>
 			</div>
 		);
 	}
