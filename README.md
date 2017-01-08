@@ -6,6 +6,13 @@
 * front end built by react - redux
 * back end built by Golang
 
+#How it works
+* Load summoner Info
+* Load rune page
+* Load Mastery Page
+* Choose Your favorite Chamption
+* Choose Your Build
+
 #npm pacakages
 * npm init -y
 * npm i -S react react-dom
