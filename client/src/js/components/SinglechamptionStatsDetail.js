@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ImageIcon from './ImageIcon';
 import ItemImageIcon from './ItemImageIcon';
 import ItemSixGrid from './ItemSixGrid';
+import SingleItemStatsDetail from './SingleItemStatsDetail';
 
 
 import { fetchChamptionStatsDetails } from "../actions/championStatsAction";
@@ -111,7 +112,7 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					<ItemSixGrid />
 				</div>
 				<div className="col-md-2 itemDescription">
-
+					<SingleItemStatsDetail />
 				</div>
 			</div>
 		);

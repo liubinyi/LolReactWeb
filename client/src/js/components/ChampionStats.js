@@ -78,23 +78,23 @@ export default class ChampionStats extends React.Component {
 
 
 
-		if (this.props.singleItemStats.id > 0) {
-			return (
-				<div>
-					<SingleItemStatsDetail />
-					<SinglechamptionStatsDetail style={singleStyle} 
-						champAbility = {championStats.singleChamptionstats} />
-					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
-						event={this.getSingleChampionAbilities.bind(this)}
-						hover={this.changeOpacity.bind(this)}
-					/>
-					<SingleItemStats
-						itemStatsInfo={championStats.itemStatsInfo}
-						click={this.getSingleItemDetails.bind(this)}
-					/>
-				</div>
-			)
-		}
+		// if (this.props.singleItemStats.id > 0) {
+		// 	return (
+		// 		<div>
+		// 			<SingleItemStatsDetail />
+		// 			<SinglechamptionStatsDetail style={singleStyle} 
+		// 				champAbility = {championStats.singleChamptionstats} />
+		// 			<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
+		// 				event={this.getSingleChampionAbilities.bind(this)}
+		// 				hover={this.changeOpacity.bind(this)}
+		// 			/>
+		// 			<SingleItemStats
+		// 				itemStatsInfo={championStats.itemStatsInfo}
+		// 				click={this.getSingleItemDetails.bind(this)}
+		// 			/>
+		// 		</div>
+		// 	)
+		// }
 
 		if (championStats.singleChamptionstats.hp != null) {
 			return (

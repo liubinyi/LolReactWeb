@@ -16,24 +16,26 @@ import { Button } from 'react-bootstrap';
 
 
 export default class SingleItemStatsDetail extends React.Component {
+
+	applyItemStats(itemId) {
+
+	}
+
 	render() {
 		const {championStats,singleChamptionstats,singleItemStats} = this.props;
-
-		const divStyle = {
-			color: '#00FF00',
-			backgroundColor: 'black',
-			float: 'right',
-			display: 'inline-block',
-			width: '50',
-			height: '100'
+		if (singleItemStats.id == null) {
+			return(
+				<p> Click Any Item To See The Affect </p>
+			);
+		} else {
+			return (
+				<div>
+					<ItemImageIcon itemKey={singleItemStats.id} />
+					<h4> {singleItemStats.name} </h4>
+					<p> {singleItemStats.description} </p>
+					<Button bsStyle="success"> Apply Item Effect </Button>
+				</div>
+			)
 		}
-
-		return (
-			<div style={divStyle}>
-				<ItemImageIcon itemKey={singleItemStats.id} />
-				<p> {singleItemStats.name} </p>
-				<h4> {singleItemStats.description} </h4>
-			</div>
-		)
 	}
 }

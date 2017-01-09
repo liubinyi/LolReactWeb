@@ -7,7 +7,7 @@ export default class ItemSixGrid extends React.Component {
 		const itemArray= [];
 		return (
 			<div className="row">
-				<table className="">
+				<table className="itemSixGrid">
 						<thead>
 					    </thead>
 					    <tbody>

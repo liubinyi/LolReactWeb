@@ -27,6 +27,14 @@ body {
 	solid #61dafb;
 }
 
+.itemDescription {
+	color: #00FF00;
+	backgroundColor: black,			
+}
+.itemSixGrid {
+	margin-left: 15px;
+}
+
 .searchButton {
 	background-color: black;
 	color:#00FF00;
