@@ -55,6 +55,7 @@ export default class SinglechamptionStatsDetail extends React.Component {
 		const {championStats,singleChamptionstats} = this.props;
 		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
 		const cooldown = 0;
+		const abilityPower = 0;
 
 		return (
 			<div className="champtionStatsDetail row" >
@@ -81,6 +82,22 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					        <td>{this.props.champAbility.attackdamage.toFixed(2)}</td>
 					      </tr>
 					      <tr>
+					        <td>Ability Power</td>
+					        <td>{abilityPower}</td>
+					      </tr>
+					      <tr>
+					        <td>Critical Chance</td>
+					        <td>{this.props.champAbility.crit.toFixed(2)}</td>
+					      </tr>
+					      <tr>
+					        <td>AttackSpeed</td>
+					        <td>{attackspeed}</td>
+					      </tr>
+				          <tr>
+					        <td>CoolDown</td>
+					        <td>{cooldown}</td>
+					      </tr>
+					      <tr>
 					        <td>Armor</td>
 					        <td>{this.props.champAbility.armor.toFixed(2)}</td>
 					      </tr>
@@ -91,18 +108,6 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					      <tr>
 					        <td>Health</td>
 					        <td>{this.props.champAbility.hp.toFixed(2)}</td>
-					      </tr>
-					      <tr>
-					        <td>Critical Chance</td>
-					        <td>{this.props.champAbility.crit.toFixed(2)}</td>
-					      </tr>
-					      <tr>
-					        <td>AttackSpeed</td>
-					        <td>{attackspeed}</td>
-					      </tr>
-					        <tr>
-					        <td>CoolDown</td>
-					        <td>{cooldown}</td>
 					      </tr>
 					    </tbody>
 					</table>

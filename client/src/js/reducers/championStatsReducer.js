@@ -39,12 +39,13 @@ export default function reducer(state={
         }
       }
       case "LOAD_ITEM_STATS_DATA_SUCCESS" : {
-
-        const filtedItems = _.filter(Object.values(action.payload), {maps: {11:true}});
-        
+        let filtedItems = _.filter(_.uniqBy(Object.values(action.payload), 'name'), {maps: {11:true}});
+        let newfiltedItems = _.filter(filtedItems, function(i) {
+          return !_.isEmpty(i.stats);
+        })
          return {
           ...state,
-          itemStatsInfo : action.payload
+          itemStatsInfo : newfiltedItems
         }
       }
     }

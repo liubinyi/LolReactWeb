@@ -3,6 +3,14 @@ import ItemImageIcon from './ItemImageIcon';
 
 
 export default class SingleItemStats extends React.Component {
+
+
+	categortyItemByTag(allitems) {
+		//given all the items as input and re-orangize them by 
+		//ablitypower, attackspeed, damage, health, movemoent speed, cooldown reduction, armor perneration, majic perneration
+		//armor
+	}
+
 	render() {
 		const divStyle = {
 	 	 width: '50',

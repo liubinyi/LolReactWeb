@@ -76,26 +76,6 @@ export default class ChampionStats extends React.Component {
 	 	 float: 'right'
 		}
 
-
-
-		// if (this.props.singleItemStats.id > 0) {
-		// 	return (
-		// 		<div>
-		// 			<SingleItemStatsDetail />
-		// 			<SinglechamptionStatsDetail style={singleStyle} 
-		// 				champAbility = {championStats.singleChamptionstats} />
-		// 			<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
-		// 				event={this.getSingleChampionAbilities.bind(this)}
-		// 				hover={this.changeOpacity.bind(this)}
-		// 			/>
-		// 			<SingleItemStats
-		// 				itemStatsInfo={championStats.itemStatsInfo}
-		// 				click={this.getSingleItemDetails.bind(this)}
-		// 			/>
-		// 		</div>
-		// 	)
-		// }
-
 		if (championStats.singleChamptionstats.hp != null) {
 			return (
 				<div>
