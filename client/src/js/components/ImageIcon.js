@@ -23,6 +23,7 @@ export default class ImageIcon extends React.Component {
 			const imageStyle = {
 			  width: '50',
 			  height: '50',
+			  border: '1px solid #61dafb',
 			};
 
 			const divStyle = {

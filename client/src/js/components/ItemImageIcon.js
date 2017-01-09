@@ -10,12 +10,15 @@ export default class ItemImageIcon extends React.Component {
 			const imageStyle = {
 			  width: '50',
 			  height: '50',
+			  border: '2px solid #FF7F50',
+			  marginBottom :'30',
+			  opacity: '0.9'
 			};
 
 			const divStyle = {
 		 	  width: '50',
 			  height: '50',
-			  display: 'inline-block'
+			  display: 'inline-block',
 			}
 
 			return (		

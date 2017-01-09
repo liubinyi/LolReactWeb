@@ -43,9 +43,10 @@ export default function reducer(state={
         let newfiltedItems = _.filter(filtedItems, function(i) {
           return !_.isEmpty(i.stats);
         })
+        //should return a dictionary instead of array
          return {
           ...state,
-          itemStatsInfo : newfiltedItems
+          itemStatsInfo : action.payload
         }
       }
     }

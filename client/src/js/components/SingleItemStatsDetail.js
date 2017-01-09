@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import _ from 'lodash';
 
 import ItemImageIcon from './ItemImageIcon';
 
@@ -80,19 +81,19 @@ export default class SingleItemStatsDetail extends React.Component {
 	render() {
 		const {championStats,singleChamptionstats,singleItemStats} = this.props;
 
-		const description = singleItemStats.description;
+		//const description = singleItemStats.description;
 
-		if (singleItemStats.id == null) {
+		if (_.isEmpty(singleItemStats)) {
 			return(
 				<p> Click Any Item To See The Affect </p>
 			);
 		} else {
 			return (
-				<div>
+				<div className="imageborder">
 					<ItemImageIcon itemKey={singleItemStats.id} />
 					<h4> {singleItemStats.name} </h4>
 					<p> {singleItemStats.description} </p>
-					<Button bsStyle="success"> Apply Item Effect </Button>
+					<Button bsStyle="success"> Apply Effect </Button>
 				</div>
 			)
 		}
