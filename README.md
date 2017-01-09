@@ -8,9 +8,12 @@
 
 #How it works
 * Load summoner Info
+* Choose Your Rune Page
 * Load rune page
+* Choose Your Mastery Page
 * Load Mastery Page
 * Choose Your favorite Chamption
+* Choose Your Item and Apply the effect
 * Choose Your Build
 
 #npm pacakages
