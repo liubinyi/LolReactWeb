@@ -9,6 +9,11 @@ body {
 .background {
 	background-color: black;
 }
+.introStyle {
+	font-size: 2rem;
+	color:#00FF00;
+	font-weight: bold;
+}
 .imageborder {
 	padding: 10px 10px 10px 10px;
 	border:1px solid #00FF00;
@@ -77,3 +82,18 @@ color: #00FF00 !important;
 input:-ms-input-placeholder {  
 color: #00FF00 !important;  
 }
+
+.cursor {
+  font-size: 30px;
+  opacity: 1;
+  color:#00FF00;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
