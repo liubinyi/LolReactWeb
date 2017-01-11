@@ -14,6 +14,11 @@ body {
 	color:#00FF00;
 	font-weight: bold;
 }
+.hover:hover {
+	 border: 1px solid #FF7F50;
+}
+
+
 .imageborder {
 	padding: 10px 10px 10px 10px;
 	border:1px solid #00FF00;

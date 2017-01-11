@@ -10,7 +10,6 @@ export default class ItemImageIcon extends React.Component {
 			const imageStyle = {
 			  width: '50',
 			  height: '50',
-			  border: '2px solid #FF7F50',
 			  marginBottom :'30',
 			  opacity: '0.9'
 			};
@@ -23,7 +22,7 @@ export default class ItemImageIcon extends React.Component {
 
 			return (		
 				<div style={divStyle}>
-					<img src={url} style={imageStyle} id={this.props.itemKey}/>
+					<img src={url} style={imageStyle} id={this.props.itemKey} className="hover" />
 				</div>			
 			);
 		}
