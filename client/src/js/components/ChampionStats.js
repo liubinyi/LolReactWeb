@@ -9,6 +9,7 @@ import SingleChampionStats from './SingleChampionStats';
 import SinglechamptionStatsDetail from './SinglechamptionStatsDetail';
 import SingleItemStats from './SingleItemStats';
 import SingleItemStatsDetail from './SingleItemStatsDetail';
+import Footer from './Footer';
 
 import _ from 'lodash';
 
@@ -98,6 +99,7 @@ export default class ChampionStats extends React.Component {
 							/>
 						</div>
 					</div>
+					<Footer />
 				</div>
 			);	
 		}
@@ -121,6 +123,7 @@ export default class ChampionStats extends React.Component {
 						/>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		);		
 	}

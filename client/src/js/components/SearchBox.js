@@ -47,10 +47,11 @@ export default class SearchBox extends React.Component {
 	      	<div>
 		      	<TypeWriter typing={1} minDelay={1}>
 		      		<div className="introStyle">
-		      			<center>Welcome To YasuoGG, here is a quick explanation on how it works!<br />
+		      			<center>$: Welcome To YasuoGG, here is a quick explanation on how it works!<br />
 		      			1. Load Your summonerInfo and Choose a rune page you would like to apply.<br />
 		      			2. Choose Your Favorite Chamption then choose a Item from right panel.<br />
-		      			3. Click "Apply Effect" to build Your Best Build! <span className="cursor"> | </span></center>
+		      			3. Click "Apply Effect" to build Your Best Build! <span className="cursor"> |</span></center>
+		      			<br />
 		      		</div>
       			</TypeWriter>
 				<form>

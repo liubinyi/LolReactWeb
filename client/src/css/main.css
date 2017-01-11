@@ -5,19 +5,28 @@ body {
     color: #333;
     background-color: black;
 }
+.footer {
+    padding: 20px 15%;
+    margin-top: 15px;
+    font-size: .88em;
+    color: #89f5a2;
+    text-align: center
+}
 
 .background {
 	background-color: black;
 }
 .introStyle {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color:#00FF00;
 	font-weight: bold;
 }
-.hover:hover {
-	 border: 1px solid #FF7F50;
+.hover {
+	border: 1px solid #FF7F50;
 }
-
+.hover:hover {
+	border: 1px solid #00FF00;
+}
 
 .imageborder {
 	padding: 10px 10px 10px 10px;
@@ -89,7 +98,7 @@ color: #00FF00 !important;
 }
 
 .cursor {
-  font-size: 30px;
+  font-size: 15px;
   opacity: 1;
   color:#00FF00;
   animation: blink 1s linear infinite;
