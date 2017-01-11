@@ -81,30 +81,46 @@ export default class ChampionStats extends React.Component {
 				<div>
 					<SinglechamptionStatsDetail style={singleStyle} 
 						champAbility = {championStats.singleChamptionstats} />
-					<SingleChampionStats championStatsInfo={championStats.championStatsInfo} 
-						event={this.getSingleChampionAbilities.bind(this)}
-						hover={this.changeOpacity.bind(this)}
-					/>
-					<SingleItemStats
-						itemStatsInfo={championStats.itemStatsInfo}
-						click={this.getSingleItemDetails.bind(this)}
-					/>
+					<div className="row">
+						<div className="col-md-4">
+							<SingleChampionStats 
+								championStatsInfo={championStats.championStatsInfo} 
+								event={this.getSingleChampionAbilities.bind(this)} 
+								hover= {this.changeOpacity.bind(this)}
+							/>
+						</div>
+						<div className="col-md-4">
+						</div>
+						<div className="col-md-4">
+							<SingleItemStats
+								itemStatsInfo={championStats.itemStatsInfo}
+								click={this.getSingleItemDetails.bind(this)}
+							/>
+						</div>
+					</div>
 				</div>
 			);	
 		}
 
 		return (
 			<div>
-				<SingleChampionStats 
-					championStatsInfo={championStats.championStatsInfo} 
-					event={this.getSingleChampionAbilities.bind(this)} 
-					hover= {this.changeOpacity.bind(this)}
-				/>
-
-				<SingleItemStats
-					itemStatsInfo={championStats.itemStatsInfo}
-					click={this.getSingleItemDetails.bind(this)}
-				/>
+				<div className="row">
+					<div className="col-md-4">
+						<SingleChampionStats 
+							championStatsInfo={championStats.championStatsInfo} 
+							event={this.getSingleChampionAbilities.bind(this)} 
+							hover= {this.changeOpacity.bind(this)}
+						/>
+					</div>
+					<div className="col-md-4">
+					</div>
+					<div className="col-md-4">
+						<SingleItemStats
+							itemStatsInfo={championStats.itemStatsInfo}
+							click={this.getSingleItemDetails.bind(this)}
+						/>
+					</div>
+				</div>
 			</div>
 		);		
 	}
