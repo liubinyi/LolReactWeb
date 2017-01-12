@@ -2,12 +2,12 @@
 ============================
 
 ##INFO
-* A single page web application that display league in game status
-* front end built by react - redux
-* back end built by Golang
+* A single page web application that display league in champion and build status
+* front end built with react - redux
+* back end built with Golang
 
 #How it works
-* Load summoner Info
+* Load Your summoner Info
 * Choose Your Rune Page
 * Load rune page
 * Choose Your Mastery Page
