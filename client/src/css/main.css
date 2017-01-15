@@ -110,4 +110,9 @@ color: #00FF00 !important;
   50% {
     opacity: 0; }
   100% {
-    opacity: 1; } }
+    opacity: 1; } 
+}
+
+.filterButtons {
+	margin-bottom: 30px;
+}

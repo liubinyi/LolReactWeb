@@ -39,14 +39,14 @@ export default function reducer(state={
         }
       }
       case "LOAD_ITEM_STATS_DATA_SUCCESS" : {
-        let filtedItems = _.filter(_.uniqBy(Object.values(action.payload), 'name'), {maps: {11:true}});
-        let newfiltedItems = _.filter(filtedItems, function(i) {
-          return !_.isEmpty(i.stats);
-        })
-        //should return a dictionary instead of array
+
+        const filtedItems = _.pickBy(action.payload, function(value, key) {
+          return (value.maps[11] == true && !_.isEmpty(value.stats) && value.depth > 2
+                  && key != 3671 && key != 3672 && key != 3673 && key != 3675);
+        });
          return {
           ...state,
-          itemStatsInfo : action.payload
+          itemStatsInfo : filtedItems
         }
       }
     }
