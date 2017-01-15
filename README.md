@@ -7,6 +7,7 @@
 * back end built with Golang
 
 #How it works
+![Screenshot](demo2.png)
 * Load Your summoner Info
 * Choose Your Rune Page
 * Load rune page
@@ -15,6 +16,7 @@
 * Choose Your favorite Chamption
 * Choose Your Item and Apply the effect
 * Choose Your Build
+![Screenshot](demo.png)
 
 #npm pacakages
 * npm init -y
@@ -35,5 +37,4 @@
 ##local Server
 * http://localhost:8080
 
-![Screenshot](demo.png)
-![Screenshot](demo2.png)
+
