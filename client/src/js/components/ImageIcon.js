@@ -29,7 +29,8 @@ export default class ImageIcon extends React.Component {
 			const divStyle = {
 		 	  width: '50',
 			  height: '50',
-			  display: 'inline-block'
+			  display: 'inline-block',
+			  marginBottom : 20
 			}
 
 			return (		
@@ -41,14 +42,9 @@ export default class ImageIcon extends React.Component {
 
 
 		if (this.props.loadFullChampImg == true) {
-			const imageStyle = {
-		 	  width: '170',
-			  height: '250',
-			  border: '2px solid #00FF00'
-			}
 			const url = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+ this.props.championKey + '_0' +'.jpg';
 			return 	(
-				<img src={url} style={imageStyle} className={this.props.championKey}/>		
+				<img src={url} className={this.props.championKey + ' ' + "FullChampImg"}/>		
 			);
 		}
 	}

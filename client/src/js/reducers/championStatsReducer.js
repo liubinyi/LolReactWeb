@@ -7,7 +7,8 @@ export default function reducer(state={
     singleChamptionstats:{},
     singleItemStats:{},
     singleChampLevelChanged : false,
-    itemStatsInfo : {}
+    itemStatsInfo : {},
+    filteredItemStatsInfo : {}
   }, action) {
 
     switch (action.type) {
@@ -41,12 +42,19 @@ export default function reducer(state={
       case "LOAD_ITEM_STATS_DATA_SUCCESS" : {
 
         const filtedItems = _.pickBy(action.payload, function(value, key) {
-          return (value.maps[11] == true && !_.isEmpty(value.stats) && value.depth > 2
+          return (value.maps[11] == true && !_.isEmpty(value.stats) && value.depth > 1
                   && key != 3671 && key != 3672 && key != 3673 && key != 3675);
         });
          return {
           ...state,
-          itemStatsInfo : filtedItems
+          itemStatsInfo : filtedItems,
+          filteredItemStatsInfo: filtedItems
+        }
+      }
+      case "filterItemsByTag": {
+        return {
+          ...state,
+          filteredItemStatsInfo : action.payload
         }
       }
     }

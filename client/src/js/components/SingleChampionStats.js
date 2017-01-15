@@ -10,7 +10,8 @@ export default class SingleChampionStats extends React.Component {
 		 display: 'inline-block',
 		 opacity: 0.5,
 		 backgroundColor: 'black',
-		 marginRight: '10'
+		 marginRight: '20',
+		 marginBottom : '20'
 		}
 
 		const graphs = Object.values(this.props.championStatsInfo).map(champ =>

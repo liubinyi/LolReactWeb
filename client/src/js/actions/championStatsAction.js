@@ -27,3 +27,10 @@ export function fetchItemStatsDetails(itemStats) {
     payload: itemStats
   }
 }
+
+export function filterItemsByTag(items) {
+  return {
+    type: 'filterItemsByTag',
+    payload: items
+  }
+}

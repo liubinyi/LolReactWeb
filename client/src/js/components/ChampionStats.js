@@ -82,21 +82,26 @@ export default class ChampionStats extends React.Component {
 				<div>
 					<SinglechamptionStatsDetail style={singleStyle} 
 						champAbility = {championStats.singleChamptionstats} />
-					<div className="row">
-						<div className="col-md-4">
+					<div className="row sectionStyle">
+						<div className="col-md-1">
+						</div>
+						<div className="col-md-5">
 							<SingleChampionStats 
 								championStatsInfo={championStats.championStatsInfo} 
 								event={this.getSingleChampionAbilities.bind(this)} 
 								hover= {this.changeOpacity.bind(this)}
 							/>
 						</div>
-						<div className="col-md-4">
+						<div className="col-md-1">
 						</div>
 						<div className="col-md-4">
 							<SingleItemStats
 								itemStatsInfo={championStats.itemStatsInfo}
+								filteredItemStatsInfo={championStats.filteredItemStatsInfo}
 								click={this.getSingleItemDetails.bind(this)}
 							/>
+						</div>
+						<div className="col-md-1">
 						</div>
 					</div>
 					<Footer />
@@ -106,21 +111,26 @@ export default class ChampionStats extends React.Component {
 
 		return (
 			<div>
-				<div className="row">
-					<div className="col-md-4">
+				<div className="row sectionStyle">
+					<div className="col-md-1">
+					</div>
+					<div className="col-md-5">
 						<SingleChampionStats 
 							championStatsInfo={championStats.championStatsInfo} 
 							event={this.getSingleChampionAbilities.bind(this)} 
 							hover= {this.changeOpacity.bind(this)}
 						/>
 					</div>
-					<div className="col-md-4">
+					<div className="col-md-1">
 					</div>
 					<div className="col-md-4">
 						<SingleItemStats
 							itemStatsInfo={championStats.itemStatsInfo}
+							filteredItemStatsInfo={championStats.filteredItemStatsInfo}
 							click={this.getSingleItemDetails.bind(this)}
 						/>
+					</div>
+					<div className="col-md-1">
 					</div>
 				</div>
 				<Footer />

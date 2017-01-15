@@ -1,27 +1,31 @@
 import React from 'react';
+import { connect } from "react-redux";
+
 import ItemImageIcon from './ItemImageIcon';
 import { Button } from 'react-bootstrap';
 
+import { filterItemsByTag } from "../actions/championStatsAction";
+
+@connect((store) => {
+  return {
+    championStats: store.championStats,
+    singleChamptionstats: store.championStats.singleChamptionstats,
+    singleItemStats: store.championStats.singleItemStats
+  };
+})
 
 export default class SingleItemStats extends React.Component {
 
+	categortyItemByTag(tag) {
 
-	categortyItemByTag(allitems) {
-		//given all the items as input and re-orangize them by 
-		//ablitypower, attackspeed, damage, health, movemoent speed, cooldown reduction, armor perneration, majic perneration
-		//armor
-	}
-
-	filterByAblity() {
-		//dispatch an event to filter itemStatsInfo
-	}
-
-	filterByDamage() {
-		//dispatch an event to filter itemStatsInfo
-	}
-
-	filterByAttackSpeed() {
-		//dispatch an event to filter itemStatsInfo
+		if (tag == "") {
+			this.props.dispatch(filterItemsByTag(this.props.itemStatsInfo));
+		} else {
+			let newItems = _.pickBy(this.props.itemStatsInfo, function(value, key) {
+							return (value.tags != null &&value.tags.includes(tag));
+						});
+			this.props.dispatch(filterItemsByTag(newItems));
+		}
 	}
 
 	render() {
@@ -30,10 +34,11 @@ export default class SingleItemStats extends React.Component {
 		 height: '50',
 		 display: 'inline-block',
 		 backgroundColor: 'black',
-		 marginRight: '10'
+		  marginRight: '20',
+		 marginBottom : '20'
 		}
 
-		const itemGraphs = Object.values(this.props.itemStatsInfo).map(item =>
+		const itemGraphs = Object.values(this.props.filteredItemStatsInfo).map(item =>
 	   			 <div id={item.id} key={item.id} style={divStyle} onClick={this.props.click}>
 	   			 	<ItemImageIcon itemKey={item.id} />	
 				 </div>
@@ -48,10 +53,10 @@ export default class SingleItemStats extends React.Component {
 		return (
 			<div>
 				<div className="filterButtons">
-					<Button onClick={this.filterByAttackSpeed.bind(this)} bsStyle="success"> All </Button>
-					<Button onClick={this.filterByAblity.bind(this)} bsStyle="success"> Ablity </Button>
-					<Button onClick={this.filterByDamage.bind(this)} bsStyle="success"> Damage </Button>
-					<Button onClick={this.filterByAttackSpeed.bind(this)} bsStyle="success"> AttackSpeed </Button>
+					<Button onClick={this.categortyItemByTag.bind(this,"")} bsStyle="success"> All </Button>
+					<Button onClick={this.categortyItemByTag.bind(this,"SpellDamage")} bsStyle="success"> Ablity </Button>
+					<Button onClick={this.categortyItemByTag.bind(this,"Damage")} bsStyle="success"> Damage </Button>
+					<Button onClick={this.categortyItemByTag.bind(this,"AttackSpeed")} bsStyle="success"> AttackSpeed </Button>
 				</div>
 				<div style={mainDivStyle}>
 					{itemGraphs}

@@ -59,14 +59,16 @@ export default class SinglechamptionStatsDetail extends React.Component {
 
 		return (
 			<div className="champtionStatsDetail row" >
-				<div className="col-md-2">
-					<ImageIcon championKey={this.props.champAbility.key} loadFullChampImg={true} />
+				<div className="col-md-1">	
 					
 				</div>
-				<div className="col-md-1">	
-					<h4> Level {this.props.champAbility.level} </h4>
-				 	<Button onClick={this.levelUp.bind(this)} bsStyle="success"> + </Button>
-				 	<Button onClick={this.levelDown.bind(this)} bsStyle="info"> - </Button>
+				<div className="col-md-2 levelButton">
+					<div className="level">
+						<h6> Lvl {this.props.champAbility.level} </h6>
+					 	<Button onClick={this.levelUp.bind(this)} bsStyle="success"> + </Button>
+					 	<Button onClick={this.levelDown.bind(this)} bsStyle="info"> - </Button>
+				 	</div>
+					<ImageIcon championKey={this.props.champAbility.key} loadFullChampImg={true} />
 				</div>
 				<div className="col-md-3">
 					<table className="table table-condensed">
@@ -112,12 +114,15 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					    </tbody>
 					</table>
 				</div>
-				<div className="col-md-4">
+				<div className="col-md-3">
 					<h4> Pick Your Item To Create Best Build </h4>
 					<ItemSixGrid />
 				</div>
 				<div className="col-md-2 itemDescription">
 					<SingleItemStatsDetail />
+				</div>
+				<div className="col-md-1">	
+					
 				</div>
 			</div>
 		);
