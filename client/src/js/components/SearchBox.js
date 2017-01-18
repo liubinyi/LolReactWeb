@@ -74,17 +74,23 @@ export default class SearchBox extends React.Component {
 			<div className="row">
 				<div className="col-md-1">
 				</div>
+				<div>
 				<div className="col-md-3 introStyle">
 					<form>
 						<input type="text" placeholder="Your summoner name..." ref="createInput" className="inputBox"/>
 						<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Load</button>
 					</form>
 				</div>
+				<div className="col-md-1">
+				</div>
+				<div>
 				<div className="col-md-1 introStyle" style={divStyle}>
 					<ImageIcon iconId={summonerInfo.profileIconId}/>
 				</div>
-				<div className="col-md-6 introStyle" style={divStyle}>
+				<div className="col-md-5 introStyle" style={divStyle}>
 					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
+				</div>
+				</div>
 				</div>
 				<div className="col-md-1">
 				</div>
