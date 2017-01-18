@@ -80,10 +80,10 @@ export default class SearchBox extends React.Component {
 						<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Load</button>
 					</form>
 				</div>
-				<div className="col-md-1" style={divStyle}>
+				<div className="col-md-1 introStyle" style={divStyle}>
 					<ImageIcon iconId={summonerInfo.profileIconId}/>
 				</div>
-				<div className="col-md-6" style={divStyle}>
+				<div className="col-md-6 introStyle" style={divStyle}>
 					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
 				</div>
 				<div className="col-md-1">

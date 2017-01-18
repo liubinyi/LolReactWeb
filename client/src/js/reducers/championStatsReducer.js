@@ -57,6 +57,13 @@ export default function reducer(state={
           filteredItemStatsInfo : action.payload
         }
       }
+      // case "Add_ITEM_TO_CURRENT_CHAMPION" {
+      //   //state should also have a item count that keep track of how many items that a current chamption has
+      //   return {
+      //     ...state,
+      //     singleChamptionstats: action.payload
+      //   }
+      // }
     }
 
     return state

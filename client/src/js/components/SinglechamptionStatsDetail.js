@@ -52,10 +52,12 @@ export default class SinglechamptionStatsDetail extends React.Component {
 
 	render() {
 
+		//ablity should have per level amount next to the side
 		const {championStats,singleChamptionstats} = this.props;
 		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
 		const cooldown = 0;
 		const abilityPower = 0;
+		const lifeSteal = 0;
 
 		return (
 			<div className="champtionStatsDetail row" >
@@ -110,6 +112,10 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					      <tr>
 					        <td>Health</td>
 					        <td>{this.props.champAbility.hp.toFixed(2)}</td>
+					      </tr>
+					      <tr>
+					        <td>lifeSteal</td>
+					        <td>{this.props.champAbility.lifeSteal}</td>
 					      </tr>
 					    </tbody>
 					</table>

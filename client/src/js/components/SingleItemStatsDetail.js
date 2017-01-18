@@ -6,7 +6,7 @@ import ItemImageIcon from './ItemImageIcon';
 
 import FontAwesome from 'react-fontawesome';
 import { Button } from 'react-bootstrap';
-import { applyPercentageItemEffect,applyFlatItemEffect} from "../helper/helper";
+import { applyPercentageItemEffect,applyFlatItemEffect} from "../Helper/helper";
 
 @connect((store) => {
   return {
@@ -19,87 +19,63 @@ import { applyPercentageItemEffect,applyFlatItemEffect} from "../helper/helper";
 
 export default class SingleItemStatsDetail extends React.Component {
 
-
-
-	// applyItemStats(itemId) {
-	// 	//use item id to get the item
-	// 	//then loop thorugh item's stats and create a new object with affect and pass to champion props
-	// }
-
-	// applyPercentageItemEffect(oldStats,num) {
-	// 	let newStats = oldStats * (1 + num);
-	// 	return newStats;
-	// }
-
-	// applyFlatItemEffect(oldStats, num) {
-	// 	if (oldStats == null) {
-	// 		return num;
-	// 	} else {
-	// 		return oldStats + num;
-	// 	}
-	// }
-
-	// applyPercentButAsFlet(oldStats,num) {
-	// 	if (oldStats == null) {
-	// 		return num;
-	// 	} else {
-	// 		return oldStats + num;
-	// 	}
-	// }
-
+	ItemAdded(itemId, newChamptionStats) {
+		//this.props.dispatch(ItemAddedToCurrentChamption(itemId, newChamptionStats));
+	}
 
 	generateStatsObject(itemStats, champtionStats) {
 		//this function will be a swtich statement
-		let newChamptionStats = champtionStats;
-		let a = 
+		let newChamptionStats = {...champtionStats};
 		_.forIn(itemStats.stats, function(value, key) {
 			switch (key) {
 
 			  /*****************all percentage case************/
 		      case "PercentAttackSpeedMod": {
 		      	//attack speed by percent 40%
-		      	champtionStats.attackspeed = applyPercentageItemEffect(champtionStats.attackspeed, value);
+		      	newChamptionStats.attackspeed = applyPercentageItemEffect(champtionStats.attackspeed, value);
 		      }
 	  	      case "PercentMovementSpeedMod": {
 		      	//movement speed by percent 7%
-		        champtionStats.movespeed = applyPercentageItemEffect(champtionStats.movespeed, value);
+		        newChamptionStats.movespeed = applyPercentageItemEffect(champtionStats.movespeed, value);
 		      }
 		    
 		      /*****************all flat case************/
 		     
 		      case "FlatCritChanceMod": {
 	  	      	//critChance 0.3 = 30% flat
-		         champtionStats.crit = applyFlatItemEffect(champtionStats.crit, value);
+		         newChamptionStats.crit = applyFlatItemEffect(champtionStats.crit, value);
 		      }
 
 		      case "FlatMagicDamageMod": {
 		      	//ablityPower ex: + 60
-		        champtionStats.abilityPower = applyFlatItemEffect(champtionStats.abilityPower, value);
+		        newChamptionStats.abilityPower = applyFlatItemEffect(champtionStats.abilityPower, value);
 		      }
 		      case "FlatHPPoolMod": {
 		      	//flat health ex: + 400 health
-		        champtionStats.hp = applyFlatItemEffect(champtionStats.hp, value);
+		        newChamptionStats.hp = applyFlatItemEffect(champtionStats.hp, value);
 		      }
 		       case "FlatPhysicalDamageMod": {
 		      	//flat damage ex: + 60 damage
-		        champtionStats.attackdamage = applyFlatItemEffect(champtionStats.attackdamage, value);
+		        newChamptionStats.attackdamage = applyFlatItemEffect(champtionStats.attackdamage, value);
 		      }
 		       case "FlatArmorMod": {
 		      	//flat FlatArmorMod ex: + 100 armor
-		        champtionStats.Armor = applyFlatItemEffect(champtionStats.Armor, value);
+		        newChamptionStats.Armor = applyFlatItemEffect(champtionStats.Armor, value);
 		      }
 		       case "FlatSpellBlockMod": {
 		      	//flat magicResist ex: + 40 majic resist
-		       champtionStats.magicResist = applyFlatItemEffect(champtionStats.magicResist, value);
+		       newChamptionStats.magicResist = applyFlatItemEffect(champtionStats.magicResist, value);
 		      }
 		      //percent stats but treat as flat stats
 		       case "PercentLifeStealMod": {
 		      	//lift steal like 10% but it's added as flat
-		      	champion.lifeSteal = applyPercentButAsFlet(champion.lifeSteal, value);
+		      	newChamptionStats.lifeSteal = applyFlatItemEffect(champtionStats.lifeSteal, value);
 		      }
 			}
 
-		});	
+		});
+		//Here should dispatch a event to notice that chamption statas is chanced
+		//this this.props.dispatch(ItemAddedToCurrentChamption(itemId, newChamptionStats));
 	    return newChamptionStats;
 	}
 
