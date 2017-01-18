@@ -6,6 +6,7 @@ import ItemImageIcon from './ItemImageIcon';
 
 import FontAwesome from 'react-fontawesome';
 import { Button } from 'react-bootstrap';
+import { applyPercentageItemEffect,applyFlatItemEffect} from "../helper/helper";
 
 @connect((store) => {
   return {
@@ -18,64 +19,88 @@ import { Button } from 'react-bootstrap';
 
 export default class SingleItemStatsDetail extends React.Component {
 
-	applyItemStats(itemId) {
-		//use item id to get the item
-		//then loop thorugh item's stats and create a new object with affect and pass to champion props
-	}
 
-	generateStatsObject(stats) {
+
+	// applyItemStats(itemId) {
+	// 	//use item id to get the item
+	// 	//then loop thorugh item's stats and create a new object with affect and pass to champion props
+	// }
+
+	// applyPercentageItemEffect(oldStats,num) {
+	// 	let newStats = oldStats * (1 + num);
+	// 	return newStats;
+	// }
+
+	// applyFlatItemEffect(oldStats, num) {
+	// 	if (oldStats == null) {
+	// 		return num;
+	// 	} else {
+	// 		return oldStats + num;
+	// 	}
+	// }
+
+	// applyPercentButAsFlet(oldStats,num) {
+	// 	if (oldStats == null) {
+	// 		return num;
+	// 	} else {
+	// 		return oldStats + num;
+	// 	}
+	// }
+
+
+	generateStatsObject(itemStats, champtionStats) {
 		//this function will be a swtich statement
-		let effect = {};
+		let newChamptionStats = champtionStats;
+		let a = 
+		_.forIn(itemStats.stats, function(value, key) {
+			switch (key) {
 
-		//repace stats with it's key
-		switch (Object.keys(stats)) {
+			  /*****************all percentage case************/
+		      case "PercentAttackSpeedMod": {
+		      	//attack speed by percent 40%
+		      	champtionStats.attackspeed = applyPercentageItemEffect(champtionStats.attackspeed, value);
+		      }
+	  	      case "PercentMovementSpeedMod": {
+		      	//movement speed by percent 7%
+		        champtionStats.movespeed = applyPercentageItemEffect(champtionStats.movespeed, value);
+		      }
+		    
+		      /*****************all flat case************/
+		     
+		      case "FlatCritChanceMod": {
+	  	      	//critChance 0.3 = 30% flat
+		         champtionStats.crit = applyFlatItemEffect(champtionStats.crit, value);
+		      }
 
-		  /*****************all percentage case************/
-	      case "PercentPhysicalDamageMod": {
-	        effect["Damage"] = stats["PercentPhysicalDamageMod"];
-	      }
-	      case "PercentAttackSpeedMod": {
-	      	//attack speed by percent 40%
-	        effect["AttackSpeed"] = stats["PercentAttackSpeedMod"];
-	      }
-  	      case "PercentMovementSpeedMod": {
-	      	//movement speed by percent 7%
-	        effect["MoveSpeedByPercent"] = stats["PercentMovementSpeedMod"];
-	      }
+		      case "FlatMagicDamageMod": {
+		      	//ablityPower ex: + 60
+		        champtionStats.abilityPower = applyFlatItemEffect(champtionStats.abilityPower, value);
+		      }
+		      case "FlatHPPoolMod": {
+		      	//flat health ex: + 400 health
+		        champtionStats.hp = applyFlatItemEffect(champtionStats.hp, value);
+		      }
+		       case "FlatPhysicalDamageMod": {
+		      	//flat damage ex: + 60 damage
+		        champtionStats.attackdamage = applyFlatItemEffect(champtionStats.attackdamage, value);
+		      }
+		       case "FlatArmorMod": {
+		      	//flat FlatArmorMod ex: + 100 armor
+		        champtionStats.Armor = applyFlatItemEffect(champtionStats.Armor, value);
+		      }
+		       case "FlatSpellBlockMod": {
+		      	//flat magicResist ex: + 40 majic resist
+		       champtionStats.magicResist = applyFlatItemEffect(champtionStats.magicResist, value);
+		      }
+		      //percent stats but treat as flat stats
+		       case "PercentLifeStealMod": {
+		      	//lift steal like 10% but it's added as flat
+		      	champion.lifeSteal = applyPercentButAsFlet(champion.lifeSteal, value);
+		      }
+			}
 
-	      /*****************all flat case************/
-	      case "FlatCritDamageMod": {
-	        effect["CritDamage"] = stats["FlatCritDamageMod"];
-	      }
-
-	      case "FlatCritChanceMod": {
-  	      	//critChance 0.3 = 30% flat
-	        effect["CritChance"] = stats["FlatCritChanceMod"];
-	      }
-
-	      case "FlatMagicDamageMod": {
-	      	//ablityPower ex: + 60
-	        effect["abilityPower"] = stats["FlatMagicDamageMod"];
-	      }
-	      case "FlatHPPoolMod": {
-	      	//flat health ex: + 400 health
-	        effect["Health"] = stats["FlatHPPoolMod"];
-	      }
-	       case "FlatPhysicalDamageMod": {
-	      	//flat damage ex: + 60 damage
-	        effect["damage"] = stats["FlatPhysicalDamageMod"];
-	      }
-	       case "FlatArmorMod": {
-	      	//flat FlatArmorMod ex: + 100 armor
-	        effect["armor"] = stats["FlatArmorMod"];
-	      }
-	       case "FlatSpellBlockMod": {
-	      	//flat magicResist ex: + 40 majic resist
-	       effect["magicResist"] = stats["FlatSpellBlockMod"];
-
-	      }
-		}	
-	    return effect;
+		});	
+	    return newChamptionStats;
 	}
 
 	render() {
@@ -88,6 +113,7 @@ export default class SingleItemStatsDetail extends React.Component {
 				<p> Click Any Item To See The Affect </p>
 			);
 		} else {
+			const temp = this.generateStatsObject(this.props.singleItemStats,this.props.singleChamptionstats);
 			return (
 				<div className="imageborder">
 					<ItemImageIcon itemKey={singleItemStats.id} />
