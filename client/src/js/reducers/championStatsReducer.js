@@ -8,7 +8,8 @@ export default function reducer(state={
     singleItemStats:{},
     singleChampLevelChanged : false,
     itemStatsInfo : {},
-    filteredItemStatsInfo : {}
+    filteredItemStatsInfo : {},
+    filteredChamptionStatsInfo : {}
   }, action) {
 
     switch (action.type) {
@@ -17,6 +18,7 @@ export default function reducer(state={
           ...state,
           fetched: true,
           championStatsInfo: action.payload.data,
+          filteredChamptionStatsInfo : action.payload.data
         }
       }
       case "LOAD_CHAMPION_STATS_DATA_ERROR": {
@@ -55,6 +57,12 @@ export default function reducer(state={
         return {
           ...state,
           filteredItemStatsInfo : action.payload
+        }
+      }
+       case "filterChamptionsByTag": {
+        return {
+          ...state,
+          filteredChamptionStatsInfo : action.payload
         }
       }
       // case "Add_ITEM_TO_CURRENT_CHAMPION" {

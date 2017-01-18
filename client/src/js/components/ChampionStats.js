@@ -87,7 +87,8 @@ export default class ChampionStats extends React.Component {
 						</div>
 						<div className="col-md-5">
 							<SingleChampionStats 
-								championStatsInfo={championStats.championStatsInfo} 
+								championStatsInfo={championStats.championStatsInfo}
+								filteredChamptionStatsInfo={championStats.filteredChamptionStatsInfo}
 								event={this.getSingleChampionAbilities.bind(this)} 
 								hover= {this.changeOpacity.bind(this)}
 							/>
@@ -116,7 +117,8 @@ export default class ChampionStats extends React.Component {
 					</div>
 					<div className="col-md-5">
 						<SingleChampionStats 
-							championStatsInfo={championStats.championStatsInfo} 
+							championStatsInfo={championStats.championStatsInfo}
+							filteredChamptionStatsInfo={championStats.filteredChamptionStatsInfo}
 							event={this.getSingleChampionAbilities.bind(this)} 
 							hover= {this.changeOpacity.bind(this)}
 						/>
