@@ -1,10 +1,19 @@
 import React from 'react';
 import ItemImageIcon from './ItemImageIcon';
+import { connect } from "react-redux";
 
+@connect((store) => {
+  return {
+    championStats: store.championStats,
+    singleChamptionstats: store.championStats.singleChamptionstats,
+    singleItemStats: store.championStats.singleItemStats,
+    itemArray : store.championStats.equippedItemIds
+  };
+})
 
 export default class ItemSixGrid extends React.Component {
 	render() {
-		const itemArray= [];
+		const {itemArray} = this.props;
 		return (
 			<div className="row">
 				<table className="itemSixGrid">
@@ -13,24 +22,24 @@ export default class ItemSixGrid extends React.Component {
 					    <tbody>
 					      <tr>
 					        <td className="itemHolder"> 
-					        	{itemArray[0]}
+					        	<ItemImageIcon itemKey={itemArray[0]} />
 					        </td>
 					        <td className="itemHolder"> 
-					        	{itemArray[1]}
+					        	<ItemImageIcon itemKey={itemArray[1]} />
 					        </td>
 					        <td className="itemHolder"> 
-					        	{itemArray[2]}
+					        	<ItemImageIcon itemKey={itemArray[2]} />
 					        </td>
 					      </tr>
 					      <tr>
 					        <td className="itemHolder">
-					        	{itemArray[3]}
+					        	<ItemImageIcon itemKey={itemArray[3]} />
 					        </td>
 					        <td className="itemHolder">
-					        	{itemArray[4]}
+					        	<ItemImageIcon itemKey={itemArray[4]} />
 					        </td>
 					        <td className="itemHolder">
-					        	{itemArray[5]}
+					        	<ItemImageIcon itemKey={itemArray[5]} />
 					        </td>
 					      </tr>
 					    </tbody>

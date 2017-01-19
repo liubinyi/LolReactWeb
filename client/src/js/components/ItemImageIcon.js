@@ -25,6 +25,11 @@ export default class ItemImageIcon extends React.Component {
 					<img src={url} style={imageStyle} id={this.props.itemKey} className="hover" />
 				</div>			
 			);
+		} else {
+			return (
+				<div>
+				</div>
+			);
 		}
 	}
 }

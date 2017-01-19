@@ -9,7 +9,8 @@ export default function reducer(state={
     singleChampLevelChanged : false,
     itemStatsInfo : {},
     filteredItemStatsInfo : {},
-    filteredChamptionStatsInfo : {}
+    filteredChamptionStatsInfo : {},
+    equippedItemIds : []
   }, action) {
 
     switch (action.type) {
@@ -32,7 +33,8 @@ export default function reducer(state={
         return {
            ...state,
           fetched: true,
-          singleChamptionstats:action.payload
+          singleChamptionstats:action.payload,
+          equippedItemIds:[]
         }
       }
       case "LOAD_ITEM_STATS_DETAILS": {
@@ -59,19 +61,23 @@ export default function reducer(state={
           filteredItemStatsInfo : action.payload
         }
       }
-       case "filterChamptionsByTag": {
+      case "filterChamptionsByTag": {
         return {
           ...state,
           filteredChamptionStatsInfo : action.payload
         }
       }
-      // case "Add_ITEM_TO_CURRENT_CHAMPION" {
-      //   //state should also have a item count that keep track of how many items that a current chamption has
-      //   return {
-      //     ...state,
-      //     singleChamptionstats: action.payload
-      //   }
-      // }
+      case "Add_ITEM_TO_CURRENT_CHAMPION": {
+        //state should also have a item count that keep track of how many items that a current chamption has
+        if (state.equippedItemIds.length < 6) {
+          let newItemArray = state.equippedItemIds.concat([action.payload.itemId])
+          return {
+            ...state,
+            singleChamptionstats: action.payload.newChamptionStats,
+            equippedItemIds : newItemArray
+          }
+        }
+      }
     }
 
     return state

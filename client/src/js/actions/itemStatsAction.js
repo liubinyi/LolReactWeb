@@ -14,15 +14,15 @@ export function fetchItemStats() {
 }
 
 
-// export function ItemAddedToCurrentChamption(itemId, newChamptionStats) {
+export function ItemAddedToCurrentChamption(itemId, newChamptionStats) {
 
-// 	let data = {
-// 		itemId: itemId,
-// 		newChamptionStats : newChamptionStats
-// 	}
+	let data = {
+		itemId: itemId,
+		newChamptionStats : newChamptionStats
+	}
 
-// 	return {
-// 		type: "Add_ITEM_TO_CURRENT_CHAMPION",
-// 		payload: data
-// 	}
-// }
+	return {
+		type: "Add_ITEM_TO_CURRENT_CHAMPION",
+		payload: data
+	}
+}
