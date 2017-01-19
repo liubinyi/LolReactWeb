@@ -89,18 +89,17 @@ export default class SingleItemStatsDetail extends React.Component {
 	render() {
 		const {championStats,singleChamptionstats,singleItemStats} = this.props;
 
-		//const description = singleItemStats.description;
-
 		if (_.isEmpty(singleItemStats)) {
 			return(
 				<p> Click Any Item To See The Affect </p>
 			);
 		} else {
+			const description = singleItemStats.description.replace(/(<)(\w*)(>)?/g,"").replace(/(\/)(\w*)(>)/g,".");
 			return (
 				<div className="imageborder">
 					<ItemImageIcon itemKey={singleItemStats.id} />
-					<h4> {singleItemStats.name} </h4>
-					<p> {a} </p>
+					<h6> {singleItemStats.name} </h6>
+					<p className="itemDescriptionDetail"> {description} </p>
 					<Button bsStyle="success" onClick={this.generateStatsObject.bind(this,singleItemStats,singleChamptionstats)}> Apply Effect </Button>
 				</div>
 			)
