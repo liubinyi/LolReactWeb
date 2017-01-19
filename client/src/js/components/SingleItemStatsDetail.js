@@ -99,7 +99,7 @@ export default class SingleItemStatsDetail extends React.Component {
 				<div className="imageborder">
 					<ItemImageIcon itemKey={singleItemStats.id} />
 					<h6> {singleItemStats.name} </h6>
-					<p className="itemDescriptionDetail"> {description} </p>
+					<p> {description} </p>
 					<Button bsStyle="success" onClick={this.generateStatsObject.bind(this,singleItemStats,singleChamptionstats)}> Apply Effect </Button>
 				</div>
 			)
