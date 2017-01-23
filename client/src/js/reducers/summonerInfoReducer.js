@@ -6,6 +6,8 @@ export default function reducer(state={
       revisionDate: "",
       summonerLevel:0
     },
+    summonerRunePage: {},
+    runePageLoaded: false,
     fetched: false,
     error: null,
   }, action) {
@@ -23,6 +25,12 @@ export default function reducer(state={
           ...state,
           fetched: false,
           errpr: action.payload,
+        }
+      }
+      case "LOAD_CHAMPION_RUNE_PAGE_SUCCESS": {
+        return {
+          ...state,
+          summonerRunePage: action.payload
         }
       }
     }

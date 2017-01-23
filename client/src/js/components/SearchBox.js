@@ -3,6 +3,7 @@ import Moment from 'react-moment';
 import { connect } from "react-redux";
 
 import ImageIcon from './ImageIcon';
+import RunePage from './RunePage';
 
 
 import { fetchSummoner } from "../actions/summonerInfoAction";
@@ -10,6 +11,7 @@ import { fetchSummoner } from "../actions/summonerInfoAction";
 import { Button } from 'react-bootstrap';
 
 import TypeWriter from 'react-typewriter';
+
 
 @connect((store) => {
   return {
@@ -31,6 +33,12 @@ export default class SearchBox extends React.Component {
 		return (
 			<Moment format="YYYY/MM/DD HH:mm">{revisionDate}</Moment>
 		);
+	}
+
+	getSummonerRunePage(event) {
+		event.preventDefault();
+		const summonerId = this.props.summonerInfo.id;
+		this.props.dispatch(fetchChampionRunePage(summonerId));
 	}
 
 
@@ -89,6 +97,7 @@ export default class SearchBox extends React.Component {
 				</div>
 				<div className="col-md-5 introStyle" style={divStyle}>
 					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
+					<RunePage />
 				</div>
 				</div>
 				</div>
