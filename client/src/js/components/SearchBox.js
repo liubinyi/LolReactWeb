@@ -97,7 +97,7 @@ export default class SearchBox extends React.Component {
 				</div>
 				<div className="col-md-5 introStyle" style={divStyle}>
 					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
-					<RunePage />
+					<RunePage buttonClick={this.getSummonerRunePage.bind(this)}/>
 				</div>
 				</div>
 				</div>
