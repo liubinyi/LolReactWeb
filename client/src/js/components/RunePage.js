@@ -13,11 +13,11 @@ import { Button } from 'react-bootstrap';
 
 export default class RunePage extends React.Component {
 
-	generateRuneStats() {
+	generateRuneStats(runePage) {
 		//get slots here 
-		//and fire up an event with all the stats to update chamption stats
+		const slot = runePage.slots;
+		//fire up an action to display a new UI
 	}
-
 	render() {
 
 		const {summonerInfo, summonerRunePage, runePageLoaded } = this.props;
@@ -32,8 +32,8 @@ export default class RunePage extends React.Component {
 
 		const summonerId = this.props.summonerId;
 		const runePages = this.props.summonerRunePage[summonerId].pages.map(runePage =>
-	   			 <div id={runePage.id} key={runePage.id} className="runePage">
-	   			 	<Button bsStyle="success">{runePage.name} </Button>
+	   			 <div id={runePage.id} key={runePage.id} rune={runePage} className="runePage">
+	   			 	<Button onClick={this.generateRuneStats.bind(this, runePage)} bsStyle="success">{runePage.name} </Button>
 				 </div>
 		);
 
