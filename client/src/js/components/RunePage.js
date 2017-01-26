@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 
 import { Button } from 'react-bootstrap';
 
+import { arrayToCountHash} from "../Helper/helper";
+
 @connect((store) => {
   return {
     summonerInfo: store.summonerInfo.summonerInfo,
@@ -16,7 +18,12 @@ export default class RunePage extends React.Component {
 	generateRuneStats(runePage) {
 		//get slots here 
 		const slot = runePage.slots;
+
+		//create a hash with count of slot and it's id
+		let runeHash = arrayToCountHash(slot);
+
 		//fire up an action to display a new UI
+
 	}
 	render() {
 
