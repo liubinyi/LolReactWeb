@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 
+import { Button } from 'react-bootstrap';
+
 @connect((store) => {
   return {
     summonerInfo: store.summonerInfo.summonerInfo,
@@ -11,6 +13,10 @@ import { connect } from "react-redux";
 
 export default class RunePage extends React.Component {
 
+	generateRuneStats() {
+		//get slots here 
+		//and fire up an event with all the stats to update chamption stats
+	}
 
 	render() {
 
@@ -23,9 +29,18 @@ export default class RunePage extends React.Component {
 				</div>
 			);
 		}
-		
+
+		const summonerId = this.props.summonerId;
+		const runePages = this.props.summonerRunePage[summonerId].pages.map(runePage =>
+	   			 <div id={runePage.id} key={runePage.id} className="runePage">
+	   			 	<Button bsStyle="success">{runePage.name} </Button>
+				 </div>
+		);
+
 		return (
-			<h1> display all rune page here </h1>
+			<div>
+				{runePages}
+			</div>
 		);
 	}
 }
