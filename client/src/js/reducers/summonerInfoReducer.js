@@ -30,6 +30,7 @@ export default function reducer(state={
       case "LOAD_CHAMPION_RUNE_PAGE_SUCCESS": {
         return {
           ...state,
+          runePageLoaded : true,
           summonerRunePage: action.payload
         }
       }

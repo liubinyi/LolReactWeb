@@ -6,7 +6,7 @@ import ImageIcon from './ImageIcon';
 import RunePage from './RunePage';
 
 
-import { fetchSummoner } from "../actions/summonerInfoAction";
+import { fetchSummoner, fetchSummonerRunePage } from "../actions/summonerInfoAction";
 
 import { Button } from 'react-bootstrap';
 
@@ -38,7 +38,7 @@ export default class SearchBox extends React.Component {
 	getSummonerRunePage(event) {
 		event.preventDefault();
 		const summonerId = this.props.summonerInfo.id;
-		this.props.dispatch(fetchChampionRunePage(summonerId));
+		this.props.dispatch(fetchSummonerRunePage(summonerId));
 	}
 
 
@@ -97,7 +97,7 @@ export default class SearchBox extends React.Component {
 				</div>
 				<div className="col-md-5 introStyle" style={divStyle}>
 					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
-					<RunePage buttonClick={this.getSummonerRunePage.bind(this)}/>
+					<RunePage buttonClick={this.getSummonerRunePage.bind(this)} summonerId={summonerInfo.id}/>
 				</div>
 				</div>
 				</div>
