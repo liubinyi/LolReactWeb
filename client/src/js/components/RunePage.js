@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import { Button } from 'react-bootstrap';
+import { fetchSingleRuneStats } from "../actions/runePageAction";
 
 import { arrayToCountHash} from "../Helper/helper";
 
