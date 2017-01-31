@@ -32,6 +32,7 @@ export default class RunePage extends React.Component {
         console.log(runeStats);
         //next step create a function to generate status
         //build an object with all the stats
+        //fire up an action to change the state and display the state
 	}
 	render() {
 
