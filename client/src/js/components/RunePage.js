@@ -6,6 +6,8 @@ import { fetchSingleRuneStats } from "../actions/runePageAction";
 
 import { arrayToCountHash} from "../Helper/helper";
 
+import {runePages} from "../Helper/staticRunePages";
+
 @connect((store) => {
   return {
     summonerInfo: store.summonerInfo.summonerInfo,
@@ -22,9 +24,14 @@ export default class RunePage extends React.Component {
 
 		//create a hash with count of slot and it's id
 		let runeHash = arrayToCountHash(slot);
+		let runeIds = Object.keys(runeHash);
 
-		//fire up an action to display a new UI
-
+		const runeStats = _.pickBy(runePages.data, function(value, key) {
+          return (runeIds.includes(key));
+        });
+        console.log(runeStats);
+        //next step create a function to generate status
+        //build an object with all the stats
 	}
 	render() {
 
