@@ -23,90 +23,82 @@ export function GetSingleRunePageStatsDetails(tag) {
 	  	"cooldown": 0,
 	  	"armor": 0,
 	  	"magicPeneration": 0,
-	  	"armorPeneration": 0
+	  	"armorPeneration": 0,
+	  	"critDamage" : 0,
+	  	"critChance" : 0,
+	  	"movementSpeed" : 0,
+	  	"lifeSteal" : 0
 	  }
 
 	  switch (tag) {
 	      case "FlatSpellBlockMod": {
-	       
+	       //stats[""] = ?
 	      }
 	      case "PercentMPRegenMod": {
-	        
+	        //stats[""] = ?
 	      }
 	      case "PercentSpellBlockMod": {
-	        
+	        //stats[""] = ?
 	      }
 	      case "rPercentArmorPenetrationMod": {
-	        
+	        //stats["armorPeneration"] = ?
 	      }
 	      case "PercentHPPoolMod": {
-	        
+	        //stats["health"] = ?
 	      }
 	      case "rFlatMagicPenetrationMod": {
-	        
+	         //stats["magicPeneration"] = ?
 	      }
 	      case "PercentCritDamageMod": {
-	        
+	         //stats["critDamage"] = ?
 	      }
 	      case "PercentCritChanceMod": {
-	        
+	        //stats["critChance"] = ?
 	      }
 	      case "rPercentMagicPenetrationMod": {
-	        
+	         //stats["magicPeneration"] = ?
 	      }
 	      case "FlatArmorMod": {
-	        
+	         //stats["armor"] = ?
 	      }
 	      case "PercentMovementSpeedMod": {
-	        
+	         //stats["movementSpeed"] = ?
 	      }
 	      case "PercentLifeStealMod": {
-	        
+	         //stats["lifeSteal"] = ?
 	      }
 	      case "FlatPhysicalDamageMod": {
-	        
-	      }
-	      case "FlatMPPoolMod": {
-	        
+	         //stats["damage"] = ?
 	      }
 	      case "PercentMagicDamageMod": {
-	        
+	        //stats["ablity"] = ?
 	      }
 	      case "rFlatArmorPenetrationMod": {
-	        
-	      }
-	      case "PercentArmorMod": {
-	        
+	         //stats["armorPeneration"] = ?
 	      }
 	      case "FlatCritDamageMod": {
 	        
 	      }
 	      case "PercentAttackSpeedMod": {
-	        
+	         //stats["attackspeed"] = ?
 	      }
 	      case "FlatHPPoolMod": {
-	        
-	      }
-	      case "FlatAttackSpeedMod": {
-	        
+	         ////stats["health"] = ?
 	      }
 	      case "FlatBlockMod": {
-	        
-	      }
-	      case "FlatCritChanceMod": {
 	        
 	      }
 	      case "PercentPhysicalDamageMod": {
 	        
 	      }
 	      case "FlatMagicDamageMod": {
-	        
+	        //stats["ablity"] = ?
 	      }
 	      case "FlatMovementSpeedMod": {
-	        
+	        //stats["movementSpeed"] = ?
 	      }
 	      case "rPercentCooldownMod": {
-	        
+	        //stats["cooldown"] = ?
 	      }
     }
 }
