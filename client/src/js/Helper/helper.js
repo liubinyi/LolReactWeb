@@ -15,6 +15,17 @@ export function arrayToCountHash(array) {
 
 export function GetSingleRunePageStatsDetails(tag) {
 	  //set up swtich statement
+	  let stats = {
+	  	"health" : 0,
+	  	"ablity" : 0,
+	  	"damage" : 0,
+	  	"attackspeed" : 0,
+	  	"cooldown": 0,
+	  	"armor": 0,
+	  	"magicPeneration": 0,
+	  	"armorPeneration": 0
+	  }
+
 	  switch (tag) {
 	      case "FlatSpellBlockMod": {
 	       
