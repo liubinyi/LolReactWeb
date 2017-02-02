@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import { Button } from 'react-bootstrap';
-import { fetchSingleRuneStats } from "../actions/runePageAction";
+import { fetchSingleRuneStats,displayRunePageDetails } from "../actions/runePageAction";
 
 import { GetSingleRunePageStatsDetails, arrayToCountHash} from "../Helper/helper";
 
@@ -48,15 +48,20 @@ export default class RunePage extends React.Component {
 		  	"magicResistance" : 0
 		}
 
-		//key is rune id
-		//value is rune stats
+
+		//key is rune id, value is rune stats
 		_.forOwn(runeStats, function(value, key) {
 			let tag = Object.keys(value.stats)[0];
 			stats = GetSingleRunePageStatsDetails(tag, stats, value.stats, runeHash[key]);
 		});
 
-        console.log(stats);
-        //fire up an action to change the state and display the state
+		let details = {
+			name: runePage.name,
+			stats: stats
+		}
+
+		//display UI
+		this.props.dispatch(displayRunePageDetails(details));
 	}
 	render() {
 

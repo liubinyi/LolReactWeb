@@ -6,6 +6,7 @@ export default function reducer(state={
       revisionDate: "",
       summonerLevel:0
     },
+    runePageDetails: {},
     summonerRunePage: {},
     runePageLoaded: false,
     fetched: false,
@@ -32,6 +33,12 @@ export default function reducer(state={
           ...state,
           runePageLoaded : true,
           summonerRunePage: action.payload
+        }
+      }
+      case "DISPLAY_RUNE_PAGE_DETAILS" : {
+        return {
+          ...state,
+          runePageDetails: action.payload
         }
       }
     }

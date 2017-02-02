@@ -17,3 +17,16 @@ export function fetchSingleRuneStats(runeId) {
       })
   }
 }
+
+export function displayRunePageDetails(details) {
+
+  let data = {
+    stats: details.stats,
+    name : details.name
+  }
+
+  return {
+    type: "DISPLAY_RUNE_PAGE_DETAILS",
+    payload: data
+  }
+}
