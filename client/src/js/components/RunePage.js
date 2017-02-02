@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import { Button } from 'react-bootstrap';
 import { fetchSingleRuneStats } from "../actions/runePageAction";
 
-import { arrayToCountHash} from "../Helper/helper";
+import { GetSingleRunePageStatsDetails, arrayToCountHash} from "../Helper/helper";
 
 import {runePages} from "../Helper/staticRunePages";
+
+import _ from 'lodash';
 
 @connect((store) => {
   return {
@@ -44,10 +46,16 @@ export default class RunePage extends React.Component {
 		  	"movementSpeed" : 0,
 		  	"lifeSteal" : 0,
 		  	"magicResistance" : 0
-		  }
-        console.log(runeStats);
-        //next step create a function to generate status
-        //build an object with all the stats
+		}
+
+		//key is rune id
+		//value is rune stats
+		_.forOwn(runeStats, function(value, key) {
+			let tag = Object.keys(value.stats)[0];
+			stats = GetSingleRunePageStatsDetails(tag, stats, value.stats, runeHash[key]);
+		});
+
+        console.log(stats);
         //fire up an action to change the state and display the state
 	}
 	render() {

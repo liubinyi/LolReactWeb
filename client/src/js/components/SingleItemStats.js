@@ -34,7 +34,7 @@ export default class SingleItemStats extends React.Component {
 		 height: '50',
 		 display: 'inline-block',
 		 backgroundColor: 'black',
-		  marginRight: '20',
+		 marginRight: '20',
 		 marginBottom : '20'
 		}
 

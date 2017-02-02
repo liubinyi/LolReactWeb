@@ -13,89 +13,88 @@ export function arrayToCountHash(array) {
 	return countHash;
 }
 
-export function GetSingleRunePageStatsDetails(tag,stats,rune) {
-	  //set up swtich statement
-
+export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	  switch (tag) {
 	      case "FlatSpellBlockMod": {
-	        stats["magicResistance"] = rune[tag];
-	        break;
+	        stats["magicResistance"] += rune[tag] * count;
+	        return stats;
 	      }
 	      case "PercentSpellBlockMod": {
-	        stats["magicResistance"] =  stats["magicResistance"] * (1 + rune[tag]);
-	         break;
+	        stats["magicResistance"] =  stats["magicResistance"] * (1 + rune[tag]) * count;
+	        return stats;
 	      }
 	      case "rPercentArmorPenetrationMod": {
-	        stats["armorPeneration"] = stats["armorPeneration"] * (1 + rune[tag]);
-	        break;
+	        stats["armorPeneration"] = stats["armorPeneration"] * (1 + rune[tag]) * count;
+	       return stats;
 	      }
 	      case "PercentHPPoolMod": {
-	        stats["health"] += rune["health"];
-	        break;
+	        stats["health"] += rune["health"] * count;
+	       return stats;
 	      }
 	      case "rFlatMagicPenetrationMod": {
-	        stats["magicPeneration"] += rune["magicPeneration"];
-	        break;
+	        stats["magicPeneration"] += rune["magicPeneration"]* count;
+	       return stats;
 	      }
 	      case "PercentCritDamageMod": {
-	        stats["PercentCritDamageMod"] += rune["PercentCritDamageMod"];
-	        break;
+	        stats["critDamage"] += rune["PercentCritDamageMod"] * count;
+	       return stats;
 	      }
 	      case "PercentCritChanceMod": {
-	        stats["PercentCritChanceMod"] += rune["PercentCritChanceMod"];
-	        break;
+	        stats["critChance"] += rune["PercentCritChanceMod"] * count;
+	       return stats;
 	      }
 	      case "rPercentMagicPenetrationMod": {
-	        stats["rPercentMagicPenetrationMod"] += rune["rPercentMagicPenetrationMod"];
-	        break;
+	        stats["magicPeneration"] += rune["rPercentMagicPenetrationMod"] * count;
+	       return stats;
 	      }
 	      case "FlatArmorMod": {
-	        stats["armor"] += rune["FlatArmorMod"];
-	        break;
+	        stats["armor"] += rune["FlatArmorMod"] * count;
+	       return stats;
 	      }
 	      case "PercentMovementSpeedMod": {
-	        stats["PercentMovementSpeedMod"] = stats["PercentMovementSpeedMod"] * (1 + rune["PercentMovementSpeedMod"]);
-	        break;
+	        stats["movementSpeed"] = stats["movementSpeed"] * (1 + rune["PercentMovementSpeedMod"])* count;
+	       return stats;
 	      }
 	      case "PercentLifeStealMod": {
-	        stats["lifeSteal"] += rune["PercentLifeStealMod"];
-	        break;
+	        stats["lifeSteal"] += rune["PercentLifeStealMod"] * count;
+	       return stats;
 	      }
 	      case "FlatPhysicalDamageMod": {
-	        stats["FlatPhysicalDamageMod"] += rune["FlatPhysicalDamageMod"];
-	        break;
+	        stats["damage"] += rune["FlatPhysicalDamageMod"] * count;
+	       return stats;
 	      }
 	      case "PercentMagicDamageMod": {
-	        stats["PercentMagicDamageMod"] = stats["PercentMagicDamageMod"] * (1 + rune["PercentMagicDamageMod"]);
-	        break;
+	        stats["ablity"] = stats["ablity"] * (1 + rune["PercentMagicDamageMod"]) * count;
+	       return stats;
 	      }
 	      case "rFlatArmorPenetrationMod": {
-	        stats["armorPeneration"] += rune["rFlatArmorPenetrationMod"];
-	        break;
+	        stats["armorPeneration"] += rune["rFlatArmorPenetrationMod"] * count;
+	       return stats;
 	      }
 	      case "PercentAttackSpeedMod": {
-	         stats["attackspeed"] += rune["PercentAttackSpeedMod"];
-	         break;
+	         stats["attackspeed"] += rune["PercentAttackSpeedMod"] * count;
+	        return stats;
 	      }
 	      case "FlatHPPoolMod": {
-	         stats["health"] += rune["FlatHPPoolMod"];
-	         break;
+	         stats["health"] += rune["FlatHPPoolMod"] * count;
+	        return stats;
 	      }
 	      case "PercentPhysicalDamageMod": {
-	         stats["health"] += rune["PercentPhysicalDamageMod"];
-	         break;
+	         stats["health"] += rune["PercentPhysicalDamageMod"] * count;
+	        return stats;
 	      }
 	      case "FlatMagicDamageMod": {
-	        stats["ablity"] += rune["FlatMagicDamageMod"];
-	        break;
+	        stats["ablity"] += rune["FlatMagicDamageMod"] * count;
+	       return stats;
 	      }
 	      case "FlatMovementSpeedMod": {
-	        stats["movementSpeed"] += rune["FlatMovementSpeedMod"];
-	        break;
+	        stats["movementSpeed"] += rune["FlatMovementSpeedMod"] * count;
+	       return stats;
 	      }
 	      case "rPercentCooldownMod": {
-	        stats["cooldown"] += rune["rPercentCooldownMod"];
-	        break;
+	        stats["cooldown"] += rune["rPercentCooldownMod"] * count;
+	       return stats;
 	      }
     }
+    return stats;
 }
