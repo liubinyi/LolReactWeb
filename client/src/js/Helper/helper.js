@@ -13,92 +13,89 @@ export function arrayToCountHash(array) {
 	return countHash;
 }
 
-export function GetSingleRunePageStatsDetails(tag) {
+export function GetSingleRunePageStatsDetails(tag,stats,rune) {
 	  //set up swtich statement
-	  let stats = {
-	  	"health" : 0,
-	  	"ablity" : 0,
-	  	"damage" : 0,
-	  	"attackspeed" : 0,
-	  	"cooldown": 0,
-	  	"armor": 0,
-	  	"magicPeneration": 0,
-	  	"armorPeneration": 0,
-	  	"critDamage" : 0,
-	  	"critChance" : 0,
-	  	"movementSpeed" : 0,
-	  	"lifeSteal" : 0
-	  }
 
 	  switch (tag) {
 	      case "FlatSpellBlockMod": {
-	       //stats[""] = ?
-	      }
-	      case "PercentMPRegenMod": {
-	        //stats[""] = ?
+	        stats["magicResistance"] = rune[tag];
+	        break;
 	      }
 	      case "PercentSpellBlockMod": {
-	        //stats[""] = ?
+	        stats["magicResistance"] =  stats["magicResistance"] * (1 + rune[tag]);
+	         break;
 	      }
 	      case "rPercentArmorPenetrationMod": {
-	        //stats["armorPeneration"] = ?
+	        stats["armorPeneration"] = stats["armorPeneration"] * (1 + rune[tag]);
+	        break;
 	      }
 	      case "PercentHPPoolMod": {
-	        //stats["health"] = ?
+	        stats["health"] += rune["health"];
+	        break;
 	      }
 	      case "rFlatMagicPenetrationMod": {
-	         //stats["magicPeneration"] = ?
+	        stats["magicPeneration"] += rune["magicPeneration"];
+	        break;
 	      }
 	      case "PercentCritDamageMod": {
-	         //stats["critDamage"] = ?
+	        stats["PercentCritDamageMod"] += rune["PercentCritDamageMod"];
+	        break;
 	      }
 	      case "PercentCritChanceMod": {
-	        //stats["critChance"] = ?
+	        stats["PercentCritChanceMod"] += rune["PercentCritChanceMod"];
+	        break;
 	      }
 	      case "rPercentMagicPenetrationMod": {
-	         //stats["magicPeneration"] = ?
+	        stats["rPercentMagicPenetrationMod"] += rune["rPercentMagicPenetrationMod"];
+	        break;
 	      }
 	      case "FlatArmorMod": {
-	         //stats["armor"] = ?
+	        stats["armor"] += rune["FlatArmorMod"];
+	        break;
 	      }
 	      case "PercentMovementSpeedMod": {
-	         //stats["movementSpeed"] = ?
+	        stats["PercentMovementSpeedMod"] = stats["PercentMovementSpeedMod"] * (1 + rune["PercentMovementSpeedMod"]);
+	        break;
 	      }
 	      case "PercentLifeStealMod": {
-	         //stats["lifeSteal"] = ?
+	        stats["lifeSteal"] += rune["PercentLifeStealMod"];
+	        break;
 	      }
 	      case "FlatPhysicalDamageMod": {
-	         //stats["damage"] = ?
+	        stats["FlatPhysicalDamageMod"] += rune["FlatPhysicalDamageMod"];
+	        break;
 	      }
 	      case "PercentMagicDamageMod": {
-	        //stats["ablity"] = ?
+	        stats["PercentMagicDamageMod"] = stats["PercentMagicDamageMod"] * (1 + rune["PercentMagicDamageMod"]);
+	        break;
 	      }
 	      case "rFlatArmorPenetrationMod": {
-	         //stats["armorPeneration"] = ?
-	      }
-	      case "FlatCritDamageMod": {
-	        
+	        stats["armorPeneration"] += rune["rFlatArmorPenetrationMod"];
+	        break;
 	      }
 	      case "PercentAttackSpeedMod": {
-	         //stats["attackspeed"] = ?
+	         stats["attackspeed"] += rune["PercentAttackSpeedMod"];
+	         break;
 	      }
 	      case "FlatHPPoolMod": {
-	         ////stats["health"] = ?
-	      }
-	      case "FlatBlockMod": {
-	        
+	         stats["health"] += rune["FlatHPPoolMod"];
+	         break;
 	      }
 	      case "PercentPhysicalDamageMod": {
-	        
+	         stats["health"] += rune["PercentPhysicalDamageMod"];
+	         break;
 	      }
 	      case "FlatMagicDamageMod": {
-	        //stats["ablity"] = ?
+	        stats["ablity"] += rune["FlatMagicDamageMod"];
+	        break;
 	      }
 	      case "FlatMovementSpeedMod": {
-	        //stats["movementSpeed"] = ?
+	        stats["movementSpeed"] += rune["FlatMovementSpeedMod"];
+	        break;
 	      }
 	      case "rPercentCooldownMod": {
-	        //stats["cooldown"] = ?
+	        stats["cooldown"] += rune["rPercentCooldownMod"];
+	        break;
 	      }
     }
 }

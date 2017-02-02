@@ -29,6 +29,22 @@ export default class RunePage extends React.Component {
 		const runeStats = _.pickBy(runePages.data, function(value, key) {
           return (runeIds.includes(key));
         });
+
+    	let stats = {
+		  	"health" : 0,
+		  	"ablity" : 0,
+		  	"damage" : 0,
+		  	"attackspeed" : 0,
+		  	"cooldown": 0,
+		  	"armor": 0,
+		  	"magicPeneration": 0,
+		  	"armorPeneration": 0,
+		  	"critDamage" : 0,
+		  	"critChance" : 0,
+		  	"movementSpeed" : 0,
+		  	"lifeSteal" : 0,
+		  	"magicResistance" : 0
+		  }
         console.log(runeStats);
         //next step create a function to generate status
         //build an object with all the stats
