@@ -1,24 +1,34 @@
 import React from 'react';
 
 
-export default class Footer extends React.Component {
-
-	let name = this.props.runeDetails.name;
-
-	//filter the stats that are not 0
-
-	//should just be a table display non zero stats
-	const graphs = Object.values(this.props.runeDetails).map(r =>
-   			 <div >
-   			 	<h1> okookoko </h1>
-			 </div>
-	);
+export default class RunePageDetails extends React.Component {
 
 
 	render() {
+
+
+		let stats = this.props.runeDetails.stats;
+
+		const runeGraphs = Object.keys(stats).map(itemKey =>
+			<tr key = {itemKey}>
+	        	<td>{itemKey}</td>
+	        	<td> + {stats[itemKey]}</td>
+	        </tr>
+		);
+
 		return (
   			 <div className="row">
-				<h1> OK </h1>
+  			 	<table className="table table-condensed">
+  			 		<thead>
+					      <tr>
+					        <th>Rune Attributes</th>
+					        <th>Value</th>
+					      </tr>
+				    </thead>
+				    <tbody>
+				    	{runeGraphs}
+				    </tbody>
+  			 	</table>
 			</div>
 		);
 	}

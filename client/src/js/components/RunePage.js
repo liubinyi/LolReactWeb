@@ -8,13 +8,16 @@ import { GetSingleRunePageStatsDetails, arrayToCountHash} from "../Helper/helper
 
 import {runePages} from "../Helper/staticRunePages";
 
+import RunePageDetails from './RunePageDetails';
+
 import _ from 'lodash';
 
 @connect((store) => {
   return {
     summonerInfo: store.summonerInfo.summonerInfo,
     summonerRunePage: store.summonerInfo.summonerRunePage,
-    runePageLoaded : store.summonerInfo.runePageLoaded
+    runePageLoaded : store.summonerInfo.runePageLoaded,
+    runePageDetails : store.summonerInfo.runePageDetails
   };
 })
 
@@ -65,7 +68,7 @@ export default class RunePage extends React.Component {
 	}
 	render() {
 
-		const {summonerInfo, summonerRunePage, runePageLoaded } = this.props;
+		const {summonerInfo, summonerRunePage, runePageLoaded ,runePageDetails} = this.props;
 
 		if (!runePageLoaded) {
 			return (
@@ -81,6 +84,22 @@ export default class RunePage extends React.Component {
 	   			 	<Button onClick={this.generateRuneStats.bind(this, runePage)} bsStyle="success">{runePage.name} </Button>
 				 </div>
 		);
+
+
+		if (_.isEmpty(runePageDetails)) {
+			return (
+				<div>
+					{runePages}
+				</div>
+			);
+		} else {
+			return (
+				<div>
+					{runePages}
+					<RunePageDetails runeDetails={runePageDetails}/>
+				</div>
+			);
+		}
 
 		return (
 			<div>
