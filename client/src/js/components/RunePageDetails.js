@@ -6,7 +6,7 @@ export default class RunePageDetails extends React.Component {
 
 	render() {
 
-
+		//TODO style the UI
 		let stats = this.props.runeDetails.stats;
 
 		const runeGraphs = Object.keys(stats).map(itemKey =>

@@ -58,6 +58,9 @@ export default class RunePage extends React.Component {
 			stats = GetSingleRunePageStatsDetails(tag, stats, value.stats, runeHash[key]);
 		});
 
+
+		//remove all the stats that are zero
+		//TODO
 		let details = {
 			name: runePage.name,
 			stats: stats

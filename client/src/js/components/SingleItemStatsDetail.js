@@ -22,7 +22,7 @@ import { ItemAddedToCurrentChamption } from "../actions/itemStatsAction";
 
 export default class SingleItemStatsDetail extends React.Component {
 
-
+	//TODO here need to dispatch a stats object instead apply to base stats
 	generateStatsObject(itemStats, champtionStats) {
 		//this function will be a swtich statement
 		let newChamptionStats = {...champtionStats};
