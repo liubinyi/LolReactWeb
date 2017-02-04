@@ -59,11 +59,17 @@ export default class RunePage extends React.Component {
 		});
 
 
-		//remove all the stats that are zero
-		//TODO
+		let filterStats = {};
+
+		_.forOwn(stats, function(value, key) {
+			if (value != 0) {
+				filterStats[key] = value;
+			}
+		});
+
 		let details = {
 			name: runePage.name,
-			stats: stats
+			stats: filterStats
 		}
 
 		//display UI

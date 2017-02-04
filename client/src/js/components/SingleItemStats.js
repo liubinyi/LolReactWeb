@@ -54,6 +54,8 @@ export default class SingleItemStats extends React.Component {
 			<div>
 				<div className="filterButtons">
 					<Button onClick={this.categortyItemByTag.bind(this,"")} bsStyle="success"> All </Button>
+					<Button onClick={this.categortyItemByTag.bind(this,"Armor")} bsStyle="success"> Armor </Button>
+					<Button onClick={this.categortyItemByTag.bind(this,"SpellBlock")} bsStyle="success"> MR </Button>
 					<Button onClick={this.categortyItemByTag.bind(this,"SpellDamage")} bsStyle="success"> Ablity </Button>
 					<Button onClick={this.categortyItemByTag.bind(this,"Damage")} bsStyle="success"> Damage </Button>
 					<Button onClick={this.categortyItemByTag.bind(this,"AttackSpeed")} bsStyle="success"> AttackSpeed </Button>

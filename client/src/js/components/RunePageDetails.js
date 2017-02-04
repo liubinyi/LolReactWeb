@@ -1,4 +1,5 @@
 import React from 'react';
+import SingleTableRow from './SingleTableRow';
 
 
 export default class RunePageDetails extends React.Component {
@@ -10,10 +11,7 @@ export default class RunePageDetails extends React.Component {
 		let stats = this.props.runeDetails.stats;
 
 		const runeGraphs = Object.keys(stats).map(itemKey =>
-			<tr key = {itemKey}>
-	        	<td>{itemKey}</td>
-	        	<td> + {stats[itemKey]}</td>
-	        </tr>
+			<SingleTableRow key={itemKey} itemKey={itemKey} itemValue={stats[itemKey]}/>
 		);
 
 		return (

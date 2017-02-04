@@ -13,6 +13,13 @@ export function arrayToCountHash(array) {
 	return countHash;
 }
 
+export function NullToZero(obj) {
+	if (obj == null) {
+		return 0;
+	}
+	return obj;
+}
+
 export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	  switch (tag) {
 	      case "FlatSpellBlockMod": {
@@ -72,7 +79,7 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	       return stats;
 	      }
 	      case "PercentAttackSpeedMod": {
-	         stats["attackspeed"] += rune["PercentAttackSpeedMod"] * count;
+	         stats["attackspeed"] += rune["PercentAttackSpeedMod"] * count * 100;
 	        return stats;
 	      }
 	      case "FlatHPPoolMod": {
@@ -92,9 +99,12 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	       return stats;
 	      }
 	      case "rPercentCooldownMod": {
-	        stats["cooldown"] += rune["rPercentCooldownMod"] * count;
+	        stats["cooldown"] += rune["rPercentCooldownMod"] * count * 100;
 	       return stats;
 	      }
     }
     return stats;
 }
+
+
+

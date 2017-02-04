@@ -5,9 +5,15 @@ import ImageIcon from './ImageIcon';
 import ItemImageIcon from './ItemImageIcon';
 import ItemSixGrid from './ItemSixGrid';
 import SingleItemStatsDetail from './SingleItemStatsDetail';
+import SingleTableRow from './SingleTableRow';
 
 
 import { fetchChamptionStatsDetails } from "../actions/championStatsAction";
+
+
+
+import {NullToZero} from "../Helper/helper";
+
 
 import FontAwesome from 'react-fontawesome';
 import { Button } from 'react-bootstrap';
@@ -55,9 +61,26 @@ export default class SinglechamptionStatsDetail extends React.Component {
 		//ablity should have per level amount next to the side
 		const {championStats,singleChamptionstats} = this.props;
 		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
-		const cooldown = 0;
-		const abilityPower = 0;
-		const lifeSteal = 0;
+
+		let championStatsObject = {
+			"damage" : this.props.champAbility.attackdamage.toFixed(1),
+			"health" : this.props.champAbility.hp.toFixed(1),
+			"movementSpeed" : this.props.champAbility.movespeed.toFixed(1),
+		  	"attackspeed" : attackspeed,
+		  	"armor": this.props.champAbility.armor.toFixed(1),
+		  	"magicResistance" : NullToZero(this.props.champAbility.magicResist),
+		  	"ablity" : NullToZero(this.props.champAbility.abilityPower),
+		  	"cooldown": NullToZero(this.props.champAbility.cooldown),
+		  	"critDamage" : NullToZero(this.props.champAbility.critDamage),
+		  	"critChance" : this.props.champAbility.crit.toFixed(2),
+		  	"lifeSteal" : NullToZero(this.props.champAbility.lifeSteal),
+		  	"magicPeneration":  NullToZero(this.props.champAbility.magicPeneration),
+		  	"armorPeneration":  NullToZero(this.props.champAbility.armorPeneration)
+		}
+
+		const champtionStatsGraphs = Object.keys(championStatsObject).map(itemKey =>
+			<SingleTableRow key={itemKey} itemKey={itemKey} itemValue={championStatsObject[itemKey]}/>
+		);
 
 		return (
 			<div className="champtionStatsDetail row" >
@@ -81,47 +104,12 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					      </tr>
 					    </thead>
 					    <tbody>
-					      <tr>
-					        <td>AttackDamage</td>
-					        <td>{this.props.champAbility.attackdamage.toFixed(2)}</td>
-					      </tr>
-					      <tr>
-					        <td>Ability Power</td>
-					        <td>{abilityPower}</td>
-					      </tr>
-					      <tr>
-					        <td>Critical Chance</td>
-					        <td>{this.props.champAbility.crit.toFixed(2)}</td>
-					      </tr>
-					      <tr>
-					        <td>AttackSpeed</td>
-					        <td>{attackspeed}</td>
-					      </tr>
-				          <tr>
-					        <td>CoolDown</td>
-					        <td>{cooldown}</td>
-					      </tr>
-					      <tr>
-					        <td>Armor</td>
-					        <td>{this.props.champAbility.armor.toFixed(2)}</td>
-					      </tr>
-					      <tr>
-					        <td>Movespeed</td>
-					        <td>{this.props.champAbility.movespeed}</td>
-					      </tr>
-					      <tr>
-					        <td>Health</td>
-					        <td>{this.props.champAbility.hp.toFixed(2)}</td>
-					      </tr>
-					      <tr>
-					        <td>lifeSteal</td>
-					        <td>{this.props.champAbility.lifeSteal}</td>
-					      </tr>
+					      {champtionStatsGraphs}
 					    </tbody>
 					</table>
 				</div>
 				<div className="col-md-3">
-					<h4> Pick Your Item To Create Best Build </h4>
+					<h6> Pick Your Item To Create Best Build </h6>
 					<ItemSixGrid />
 				</div>
 				<div className="col-md-2 itemDescription">
