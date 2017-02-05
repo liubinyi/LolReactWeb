@@ -6,6 +6,7 @@ import ItemImageIcon from './ItemImageIcon';
 import ItemSixGrid from './ItemSixGrid';
 import SingleItemStatsDetail from './SingleItemStatsDetail';
 import SingleTableRow from './SingleTableRow';
+import RunePageDetails from './RunePageDetails';
 
 
 import { fetchChamptionStatsDetails } from "../actions/championStatsAction";
@@ -22,7 +23,8 @@ import { Button } from 'react-bootstrap';
   return {
     championStats: store.championStats,
     singleChamptionstats: store.championStats.singleChamptionstats,
-    singleItemStats: store.championStats.singleItemStats
+    singleItemStats: store.championStats.singleItemStats,
+    runePageDetails : store.summonerInfo.runePageDetails
   };
 })
 
@@ -59,7 +61,7 @@ export default class SinglechamptionStatsDetail extends React.Component {
 	render() {
 
 		//ablity should have per level amount next to the side
-		const {championStats,singleChamptionstats} = this.props;
+		const {championStats,singleChamptionstats,runePageDetails} = this.props;
 		const attackspeed = (0.625/(1+this.props.champAbility.attackspeedoffset)).toFixed(6);
 
 		let championStatsObject = {
@@ -111,6 +113,7 @@ export default class SinglechamptionStatsDetail extends React.Component {
 				<div className="col-md-3">
 					<h6> Pick Your Item To Create Best Build </h6>
 					<ItemSixGrid />
+					<RunePageDetails runeDetails={runePageDetails}/>
 				</div>
 				<div className="col-md-2 itemDescription">
 					<SingleItemStatsDetail />
