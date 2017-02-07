@@ -25,6 +25,7 @@
 * react-hot-loader webpack webpack-dev-server
 * npm i -g webpack webpack-dev-server
 * npm i --save lodash
+* npm install xregexp
 * touch webpack.config.js
 * touch index.html
 

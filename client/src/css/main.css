@@ -227,6 +227,9 @@ input:-ms-input-placeholder {
 	text-align: left;
 	margin-top: 30px;
 }
+#InvalidInput {
+	display:none; 
+}
 
 
 

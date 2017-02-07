@@ -25,7 +25,17 @@ export default class SearchBox extends React.Component {
 	getSummonerInfo(event) {
 		event.preventDefault();
 		const summonerName = this.refs.createInput.value;
-		this.props.dispatch(fetchSummoner(summonerName));
+		//has to use es5 cause the library
+		var XRegExp = require('xregexp');
+		
+	    const patt = new XRegExp('^[0-9\\p{L} _\\.]+$');
+
+		if (patt.test(summonerName)) {
+			document.getElementById('InvalidInput').style.display = "none"
+			this.props.dispatch(fetchSummoner(summonerName));
+		} else {
+			document.getElementById('InvalidInput').style.display = "inline";
+		}
 	}
 
 	getModifiedDate(revisionDate) {
@@ -49,13 +59,17 @@ export default class SearchBox extends React.Component {
 			  display: 'inline-block'
 		}
 
+
+
 		if (summonerInfo.id == 0) {
 	      return (
 	     	
 	      	<div className="row">
 	      		<div className="col-md-1">
+
 				</div>
 				<div className="col-md-3 introStyle">
+					<p id="InvalidInput">Invalid summoner Name.</p>
 					<form>
 						<input type="text" placeholder="Your summoner name..." ref="createInput" className="inputBox"/>
 						<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Load</button>
