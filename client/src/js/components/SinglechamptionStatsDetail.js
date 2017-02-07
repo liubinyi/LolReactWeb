@@ -111,9 +111,9 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					</table>
 				</div>
 				<div className="col-md-3">
+					<RunePageDetails runeDetails={runePageDetails}/>
 					<h6> Pick Your Item To Create Best Build </h6>
 					<ItemSixGrid />
-					<RunePageDetails runeDetails={runePageDetails}/>
 				</div>
 				<div className="col-md-2 itemDescription">
 					<SingleItemStatsDetail />

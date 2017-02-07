@@ -67,7 +67,7 @@ export default class SingleItemStatsDetail extends React.Component {
 		        }
 		        case "FlatArmorMod": {
 		      	//flat FlatArmorMod ex: + 100 armor
-		        	newChamptionStats.Armor = applyFlatItemEffect(champtionStats.Armor, value);
+		        	newChamptionStats.armor = applyFlatItemEffect(champtionStats.armor, value);
 		        	break;
 		        }
 		      	case "FlatSpellBlockMod": {
