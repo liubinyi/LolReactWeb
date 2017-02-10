@@ -77,41 +77,14 @@ export default class ChampionStats extends React.Component {
 	 	 float: 'right'
 		}
 
-		if (championStats.singleChamptionstats.hp != null) {
-			return (
-				<div>
-					<SinglechamptionStatsDetail style={singleStyle} 
-						champAbility = {championStats.singleChamptionstats} />
-					<div className="row sectionStyle">
-						<div className="col-md-1">
-						</div>
-						<div className="col-md-5">
-							<SingleChampionStats 
-								championStatsInfo={championStats.championStatsInfo}
-								filteredChamptionStatsInfo={championStats.filteredChamptionStatsInfo}
-								event={this.getSingleChampionAbilities.bind(this)} 
-								hover= {this.changeOpacity.bind(this)}
-							/>
-						</div>
-						<div className="col-md-1">
-						</div>
-						<div className="col-md-4">
-							<SingleItemStats
-								itemStatsInfo={championStats.itemStatsInfo}
-								filteredItemStatsInfo={championStats.filteredItemStatsInfo}
-								click={this.getSingleItemDetails.bind(this)}
-							/>
-						</div>
-						<div className="col-md-1">
-						</div>
-					</div>
-					<Footer />
-				</div>
-			);	
-		}
+		const renderIf = predicate => element => predicate && element;
 
 		return (
 			<div>
+				{renderIf(championStats.singleChamptionstats.hp != null)(
+			      <SinglechamptionStatsDetail style={singleStyle} 
+						champAbility = {championStats.singleChamptionstats} />
+			    )}
 				<div className="row sectionStyle">
 					<div className="col-md-1">
 					</div>
