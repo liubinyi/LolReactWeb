@@ -10,6 +10,8 @@ import {runePages} from "../Helper/staticRunePages";
 
 import RunePageDetails from './RunePageDetails';
 
+import {RenderIf} from "../Helper/helper";
+
 import _ from 'lodash';
 
 @connect((store) => {
@@ -94,26 +96,18 @@ export default class RunePage extends React.Component {
 				 </div>
 		);
 
-
-		if (_.isEmpty(runePageDetails)) {
-			return (
-				<div>
-					{runePages}
-				</div>
-			);
-		} else {
-			return (
-				<div>
-					{runePages}
-					<RunePageDetails runeDetails={runePageDetails}/>
-				</div>
-			);
-		}
+		const renderIf = RenderIf();
+		const ifRenderRunePageDetails = renderIf(!_.isEmpty(runePageDetails));
 
 		return (
 			<div>
-				{runePages}
+				{runePages}			
+				{ifRenderRunePageDetails(		
+					<RunePageDetails runeDetails={runePageDetails}/>
+				)}
+
 			</div>
+
 		);
 	}
 }
