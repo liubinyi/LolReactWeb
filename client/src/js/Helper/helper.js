@@ -1,5 +1,9 @@
 import _ from 'lodash';
 
+export function RenderIf() {
+	return predicate => element => predicate && element;
+}
+
 export function applyPercentageItemEffect(oldStats, num) {
 		return oldStats == null ? 0 : oldStats * (1 + num);
 }

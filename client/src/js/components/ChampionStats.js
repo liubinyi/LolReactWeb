@@ -10,6 +10,7 @@ import SinglechamptionStatsDetail from './SinglechamptionStatsDetail';
 import SingleItemStats from './SingleItemStats';
 import SingleItemStatsDetail from './SingleItemStatsDetail';
 import Footer from './Footer';
+import {RenderIf} from "../Helper/helper";
 
 import _ from 'lodash';
 
@@ -77,7 +78,7 @@ export default class ChampionStats extends React.Component {
 	 	 float: 'right'
 		}
 
-		const renderIf = predicate => element => predicate && element;
+		const renderIf = RenderIf();
 
 		return (
 			<div>

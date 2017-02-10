@@ -1,10 +1,11 @@
 import React from 'react';
+import {RenderIf} from "../Helper/helper";
 
 
 export default class ImageIcon extends React.Component {
 	render() {
 
-		const renderIf = predicate => element => predicate && element;
+		const renderIf = RenderIf();
 
 		const ifRenderProfile = renderIf(this.props.iconId != null &&  this.props.iconId != 0);
 		const ifRenderChamption = renderIf(this.props.championKey != null && this.props.loadFullChampImg == null);
