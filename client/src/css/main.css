@@ -65,8 +65,8 @@ body {
 	font-weight: bold;
     margin-top: 55px;
     margin-bottom: 85px;
-	text-shadow: 0 0 1.5px rgba(0,255,255,0.95);
-	color: rgba(255,255,255,0.75);
+	text-shadow: 0 0 1.5px rgba(201,170,113,0.8);
+	color: rgba(201,170,113,0.75);
 	box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
     border: 1px solid rgba(127,255,255,0.3);
     background-color: rgba(0,127,127,0.3);
@@ -85,8 +85,8 @@ body {
 }
 
 .itemDescription {
-	text-shadow: 0 0 1.5px rgba(0,255,255,0.95);
-	color: rgba(255,255,255,0.75);
+	text-shadow: 0 0 1.5px rgba(201,170,113,0.95);
+	color: rgba(201,170,113,0.75);
 	font-size : 11px;
 	white-space: pre-line;
 }
@@ -194,7 +194,7 @@ input:-ms-input-placeholder {
 	background-color: rgba(0,127,127,0.3); !important;
 	border-color: rgba(0,127,127,0.3); !important;
 	text-shadow: 0 0 10px rgba(0,255,255,0.75) !important;;
-	color: rgba(255,255,255,0.75) !important;;
+	color: rgba(201,170,113,0.75) !important;;
 	margin-left: 5px;
 }
 
