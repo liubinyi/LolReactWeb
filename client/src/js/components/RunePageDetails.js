@@ -19,7 +19,7 @@ export default class RunePageDetails extends React.Component {
 		let stats = this.props.runeDetails.stats;
 
 		const runeGraphs = Object.keys(stats).map(itemKey =>
-			<SingleTableRow key={itemKey} itemKey={itemKey} itemValue={stats[itemKey]}/>
+			<SingleTableRow key={itemKey} itemKey={itemKey} itemValue={stats[itemKey]} isRunePage={true}/>
 		);
 
 		return (
