@@ -115,12 +115,9 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					<h6> Pick Your Item To Create Best Build </h6>
 					<ItemSixGrid />
 				</div>
-				<div className="col-md-2 itemDescription">
+				<div className="col-md-3 itemDescription">
 					<SingleItemStatsDetail />
-				</div>
-				<div className="col-md-1">	
-					
-				</div>
+				</div>				
 			</div>
 		);
 	}

@@ -5,6 +5,21 @@ body {
     color: #333;
     background-color: black;
 }
+.search {
+	background-attachment: fixed;
+	background-image: url(../images/Yasuo.jpg);
+	background-repeat: no-repeat;
+	background-size:100% auto;
+ 	height: 450px;
+}
+
+@media (max-width: 768px) {
+  .search {
+    height: 350px;
+	}
+  
+}
+
 .footer {
     padding: 20px 15%;
     margin-top: 15px;
@@ -63,7 +78,7 @@ body {
 
 	font-size: 1.5rem;
 	font-weight: bold;
-    margin-top: 55px;
+    /*margin-top: 55px;*/
     margin-bottom: 85px;
 	text-shadow: 0 0 1.5px rgba(201,170,113,0.8);
 	color: rgba(201,170,113,0.75);

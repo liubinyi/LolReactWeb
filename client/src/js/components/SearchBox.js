@@ -64,7 +64,7 @@ export default class SearchBox extends React.Component {
 		if (summonerInfo.id == 0) {
 	      return (
 	     	
-	      	<div className="row">
+	      	<div className="row search">
 	      		<div className="col-md-1">
 
 				</div>
@@ -80,7 +80,7 @@ export default class SearchBox extends React.Component {
 			      		<div className="introStyle">
 			      			<center>$: Welcome To YasuoGG, here is a quick explanation on how it works!<br />
 			      			1. Load Your summonerInfo and Choose a rune page you would like to apply.<br />
-			      			2. Choose Your Favorite Chamption then choose a Item from right panel.<br />
+			      			2. Choose Your Favorite Chamption and then choose a Item from right panel.<br />
 			      			3. Click "Apply Effect" to build Your Best Build! <span className="cursor"> |</span></center>
 			      			<br />
 			      		</div>
@@ -93,7 +93,7 @@ export default class SearchBox extends React.Component {
 	    }
 
 		return (
-			<div className="row">
+			<div className="row search">
 				<div className="col-md-1">
 				</div>
 				<div>
