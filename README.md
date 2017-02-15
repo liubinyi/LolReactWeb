@@ -29,6 +29,16 @@
 * touch webpack.config.js
 * touch index.html
 
+#test pacakages
+* npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react 
+ react-test-renderer
+* npm install --save-dev babel-jest babel-polyfill
+* npm install -g npm-check-updates
+* ncu -u
+
+#run tests
+*npm run test
+
 
 ##kill npm dev server
 * ps -ax | grep node
