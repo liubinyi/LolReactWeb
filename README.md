@@ -36,8 +36,11 @@
 * npm install -g npm-check-updates
 * ncu -u
 
+#additional configurations
+* also need to add .babelrc file
+
 #run tests
-*npm run test
+* npm run test
 
 
 ##kill npm dev server

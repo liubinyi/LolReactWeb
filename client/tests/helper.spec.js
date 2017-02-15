@@ -8,7 +8,6 @@ test('apply Percent effect to a item', () => {
 	expect(applyPercentageItemEffect(10, 0.5)).toBe(15)
 })
 
-
 test('apply Flat effect to a item', () => {
 	expect(applyFlatItemEffect(15, 20)).toBe(35)
 })
