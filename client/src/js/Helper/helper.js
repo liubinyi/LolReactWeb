@@ -31,11 +31,11 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	        return stats;
 	      }
 	      case "PercentSpellBlockMod": {
-	        stats["magicResistance"] =  stats["magicResistance"] * (1 + rune[tag]) * count;
+	        stats["magicResistance"] =  stats["magicResistance"] * (1 + rune[tag]* count);
 	        return stats;
 	      }
 	      case "rPercentArmorPenetrationMod": {
-	        stats["armorPeneration"] = stats["armorPeneration"] * (1 + rune[tag]) * count;
+	        stats["armorPeneration"] = stats["armorPeneration"] * (1 + rune[tag] * count);
 	       return stats;
 	      }
 	      case "PercentHPPoolMod": {
@@ -63,7 +63,7 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	       return stats;
 	      }
 	      case "PercentMovementSpeedMod": {
-	        stats["movementSpeed"] = stats["movementSpeed"] * (1 + rune["PercentMovementSpeedMod"])* count;
+	        stats["movementSpeed"] = stats["movementSpeed"] * (1 + rune["PercentMovementSpeedMod"] * count);
 	       return stats;
 	      }
 	      case "PercentLifeStealMod": {
@@ -75,7 +75,7 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	       return stats;
 	      }
 	      case "PercentMagicDamageMod": {
-	        stats["ablity"] = stats["ablity"] * (1 + rune["PercentMagicDamageMod"]) * count;
+	        stats["ablity"] = stats["ablity"] * (1 + rune["PercentMagicDamageMod"] * count);
 	       return stats;
 	      }
 	      case "rFlatArmorPenetrationMod": {
@@ -90,10 +90,10 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	         stats["health"] += rune["FlatHPPoolMod"] * count;
 	        return stats;
 	      }
-	      case "PercentPhysicalDamageMod": {
-	         stats["health"] += rune["PercentPhysicalDamageMod"] * count;
-	        return stats;
-	      }
+	      // case "PercentPhysicalDamageMod": {
+	      //    stats["health"] += rune["PercentPhysicalDamageMod"] * count;
+	      //   return stats;
+	      // }
 	      case "FlatMagicDamageMod": {
 	        stats["ablity"] += rune["FlatMagicDamageMod"] * count;
 	       return stats;

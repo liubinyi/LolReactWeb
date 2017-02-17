@@ -30,10 +30,128 @@ test('get rune page status by tag flatSpellBlockMod', ()=> {
 
 test('get rune page status by tag percentSpellBlockMod', ()=> {
 	let tag = "PercentSpellBlockMod";
-	let stats = {"magicResistance": 1};
+	let stats = {"magicResistance": 0.1};
 	let rune = {"PercentSpellBlockMod": 0.2}
 	let count = 2
-	let newStats = {"magicResistance": 2.4}
+	let newStats = {"magicResistance": 0.13999999999999999}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+
+//PercentHPPoolMod
+//rFlatMagicPenetrationMod
+//PercentCritDamageMod
+//rPercentMagicPenetrationMod
+//PercentLifeStealMod
+//rFlatArmorPenetrationMod
+//PercentPhysicalDamageMod
+
+test('get rune page status by tag PercentCritChanceMod', ()=> {
+	let tag = "PercentCritChanceMod";
+	let stats = {"critChance": 0.2};
+	let rune = {"PercentCritChanceMod": 0.1}
+	let count = 2
+	let newStats = {"critChance": 0.4}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+test('get rune page status by tag FlatArmorMod', ()=> {
+	let tag = "FlatArmorMod";
+	let stats = {"armor": 30};
+	let rune = {"FlatArmorMod": 1}
+	let count = 6
+	let newStats = {"armor": 36}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+
+test('get rune page status by tag PercentMovementSpeedMod', ()=> {
+	let tag = "PercentMovementSpeedMod";
+	let stats = {"movementSpeed": 30};
+	let rune = {"PercentMovementSpeedMod": 0.07}
+	let count = 1
+	let newStats = {"movementSpeed": 32.1}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+
+test('get rune page status by tag FlatPhysicalDamageMod', ()=> {
+	let tag = "FlatPhysicalDamageMod";
+	let stats = {"damage": 60.3};
+	let rune = {"FlatPhysicalDamageMod": 0.67}
+	let count = 1
+	let newStats = {"damage": 60.97}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+
+test('get rune page status by tag PercentMagicDamageMod', ()=> {
+	let tag = "PercentMagicDamageMod";
+	let stats = {"ablity": 60};
+	let rune = {"PercentMagicDamageMod": 0.02}
+	let count = 6
+	let newStats = {"ablity": 67.2}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+test('get rune page status by tag PercentAttackSpeedMod', ()=> {
+	//by percent
+	let tag = "PercentAttackSpeedMod";
+	let stats = {"attackspeed": 0.0};
+	let rune = {"PercentAttackSpeedMod": 0.02}
+	let count = 2
+	let newStats = {"attackspeed": 4}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+test('get rune page status by tag FlatHPPoolMod', ()=> {
+	//by percent
+	let tag = "FlatHPPoolMod";
+	let stats = {"health": 340};
+	let rune = {"FlatHPPoolMod": 6.25}
+	let count = 2
+	let newStats = {"health": 352.5}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+test('get rune page status by tag FlatMagicDamageMod', ()=> {
+	//by percent
+	let tag = "FlatMagicDamageMod";
+	let stats = {"ablity": 7};
+	let rune = {"FlatMagicDamageMod": 2.5}
+	let count = 4
+	let newStats = {"ablity": 17}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+test('get rune page status by tag FlatMovementSpeedMod', ()=> {
+	//by percent
+	let tag = "FlatMovementSpeedMod";
+	let stats = {"movementSpeed": 325};
+	let rune = {"FlatMovementSpeedMod": 1.5}
+	let count = 5
+	let newStats = {"movementSpeed": 332.5}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+
+})
+
+
+test('get rune page status by tag rPercentCooldownMod', ()=> {
+	//by percent
+	let tag = "rPercentCooldownMod";
+	let stats = {"cooldown": 0};
+	let rune = {"rPercentCooldownMod": 0.002}
+	let count = 5
+	let newStats = {"cooldown": 1}
 	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
 
 })
