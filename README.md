@@ -33,6 +33,7 @@
 * npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react 
  react-test-renderer
 * npm install --save-dev babel-jest babel-polyfill
+* npm install --save-dev enzyme react-addons-test-utils
 * npm install -g npm-check-updates
 * ncu -u
 
