@@ -9,7 +9,7 @@ export default class SingleTableRow extends React.Component {
 		let itemKey = this.props.itemKey;
 		let itemValue = itemKey == "attackspeed" ? parseFloat(this.props.itemValue).toFixed(2):parseFloat(this.props.itemValue).toFixed(1);
 
-		if (itemKey === "cooldown" || itemKey === "lifeSteal") {
+		if (itemKey === "cooldown" || itemKey === "lifeSteal" || itemKey==="percentHealth") {
 			itemKey += "%"
 			itemValue += "%";
 		}

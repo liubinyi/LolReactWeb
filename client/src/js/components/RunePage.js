@@ -50,7 +50,21 @@ export default class RunePage extends React.Component {
 		  	"critChance" : 0,
 		  	"movementSpeed" : 0,
 		  	"lifeSteal" : 0,
-		  	"magicResistance" : 0
+		  	"magicResistance" : 0,
+		  	"ArmorPerLevel":0,
+		  	"CritChancePerLevel" : 0,
+		  	"CritDamagePerLevel" : 0,
+		  	"HealthPerLevel" : 0,
+		  	"MagicDamagePerLevel" : 0,
+		  	"MagicPenetrationPerLevel" : 0,
+		  	"MovementSpeedPerLevel" : 0,
+		  	"PhysicalDamagePerLevel" : 0,
+		  	"rFlatSpellBlockModPerLevel" : 0,
+		  	"AttackSpeedPercentPerLevel" : 0,
+		  	"CooldownPercentPerLevel" : 0,
+		  	"MagicPenetrationPercentPerLevel" : 0,
+		  	"MovementSpeedPercent" : 0,
+		  	"percentHealth" : 0
 		}
 
 

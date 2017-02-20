@@ -39,7 +39,7 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	       return stats;
 	      }
 	      case "PercentHPPoolMod": {
-	        stats["health"] += rune["health"] * count;
+	        stats["percentHealth"] += rune["PercentHPPoolMod"] * count * 100;
 	       return stats;
 	      }
 	      case "rFlatMagicPenetrationMod": {
@@ -90,10 +90,10 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	         stats["health"] += rune["FlatHPPoolMod"] * count;
 	        return stats;
 	      }
-	      // case "PercentPhysicalDamageMod": {
-	      //    stats["health"] += rune["PercentPhysicalDamageMod"] * count;
-	      //   return stats;
-	      // }
+	      case "PercentPhysicalDamageMod": {
+	         stats["PercentPhysicalDamageMod"] += rune["PercentPhysicalDamageMod"] * count;
+	        return stats;
+	      }
 	      case "FlatMagicDamageMod": {
 	        stats["ablity"] += rune["FlatMagicDamageMod"] * count;
 	       return stats;
@@ -105,6 +105,54 @@ export function GetSingleRunePageStatsDetails(tag, stats,rune, count) {
 	      case "rPercentCooldownMod": {
 	        stats["cooldown"] += rune["rPercentCooldownMod"] * count * 100;
 	       return stats;
+	      }
+	      case "rFlatArmorModPerLevel": {
+	      	stats["ArmorPerLevel"] += rune["rFlatArmorModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rFlatCritChanceModPerLevel": {
+	      	stats["CritChancePerLevel"] += rune["rFlatCritChanceModPerLevel"] * count * 100;
+	        return stats;
+	      }
+	      case "rFlatCritDamageModPerLevel": {
+	      	stats["CritDamagePerLevel"] += rune["rFlatCritDamageModPerLevel"] * count * 100;
+	        return stats;
+	      }
+	      case "rFlatHPModPerLevel": {
+	      	stats["HealthPerLevel"] += rune["rFlatHPModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rFlatMagicDamageModPerLevel": {
+	      	stats["MagicDamagePerLevel"] += rune["rFlatMagicDamageModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rFlatMagicPenetrationModPerLevel": {
+	      	stats["MagicPenetrationPerLevel"] += rune["rFlatMagicPenetrationModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rFlatMovementSpeedModPerLevel": {
+	      	stats["MovementSpeedPerLevel"] += rune["rFlatMovementSpeedModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rFlatPhysicalDamageModPerLevel": {
+	      	stats["PhysicalDamagePerLevel"] += rune["rFlatPhysicalDamageModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rPercentAttackSpeedModPerLevel": {
+	      	stats["AttackSpeedPercentPerLevel"] += rune["rPercentAttackSpeedModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rPercentCooldownModPerLevel": {
+	      	stats["CooldownPercentPerLevel"] += rune["rPercentCooldownModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rPercentMagicPenetrationModPerLevel": {
+	      	stats["MagicPenetrationPercentPerLevel"] += rune["rPercentMagicPenetrationModPerLevel"] * count;
+	        return stats;
+	      }
+	      case "rPercentMovementSpeedModPerLevel": {
+	      	stats["MovementSpeedPercent"] += rune["rPercentMovementSpeedModPerLevel"] * count;
+	        return stats;
 	      }
     }
     return stats;
