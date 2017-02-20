@@ -87,7 +87,8 @@ export default class SinglechamptionStatsDetail extends React.Component {
 		return (
 			<div className="champtionStatsDetail row" >
 				<div className="col-md-1">	
-					
+					<h6> Choose Your  </h6>
+					<h6> level frist! </h6>
 				</div>
 				<div className="col-md-2 levelButton">
 					<div className="level">
