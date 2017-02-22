@@ -261,12 +261,77 @@ test('get rune page status by tag rFlatArmorModPerLevel', ()=> {
 	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
 })
 
-//PercentHPPoolMod
-//rFlatMagicPenetrationMod
-//PercentCritDamageMod
-//rPercentMagicPenetrationMod
-//PercentLifeStealMod
-//rFlatArmorPenetrationMod
-//PercentPhysicalDamageMod
+test('get rune page status by tag PercentHPPoolMod', ()=> {
+	let tag = "PercentHPPoolMod";
+	let stats = {"percentHealth": 0};
+	let rune = {"PercentHPPoolMod": 0.01}
+	let count = 5
+	let newStats = {"percentHealth": 5}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag PercentCritDamageMod', ()=> {
+	let tag = "PercentCritDamageMod";
+	let stats = {"critDamage": 0};
+	let rune = {"PercentCritDamageMod": 2.5}
+	let count = 3
+	let newStats = {"critDamage": 7.5}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag PercentCritDamageMod', ()=> {
+	let tag = "PercentCritDamageMod";
+	let stats = {"critDamage": 0};
+	let rune = {"PercentCritDamageMod": 2.5}
+	let count = 3
+	let newStats = {"critDamage": 7.5}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rPercentMagicPenetrationMod', ()=> {
+	let tag = "rPercentMagicPenetrationMod";
+	let stats = {"magicPeneration": 0};
+	let rune = {"rPercentMagicPenetrationMod": 1}
+	let count = 3
+	let newStats = {"magicPeneration": 3}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag PercentLifeStealMod', ()=> {
+	let tag = "PercentLifeStealMod";
+	let stats = {"lifeSteal": 0};
+	let rune = {"PercentLifeStealMod": 1}
+	let count = 1
+	let newStats = {"lifeSteal": 1}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatArmorPenetrationMod', ()=> {
+	let tag = "rFlatArmorPenetrationMod";
+	let stats = {"armorPeneration": 0};
+	let rune = {"rFlatArmorPenetrationMod": 1}
+	let count = 7
+	let newStats = {"armorPeneration": 7}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag PercentPhysicalDamageMod', ()=> {
+	let tag = "PercentPhysicalDamageMod";
+	let stats = {"PercentPhysicalDamageMod": 0};
+	let rune = {"PercentPhysicalDamageMod": 0.001}
+	let count = 5
+	let newStats = {"PercentPhysicalDamageMod": 0.005}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+
+test('get rune page status by tag rFlatMagicPenetrationMod', ()=> {
+	let tag = "rFlatMagicPenetrationMod";
+	let stats = {"magicPeneration": 0};
+	let rune = {"rFlatMagicPenetrationMod": 0}
+	let count = 5
+	let newStats = {"magicPeneration": 0}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
 
 
