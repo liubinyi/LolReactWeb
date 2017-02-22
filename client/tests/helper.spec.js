@@ -39,14 +39,6 @@ test('get rune page status by tag percentSpellBlockMod', ()=> {
 })
 
 
-//PercentHPPoolMod
-//rFlatMagicPenetrationMod
-//PercentCritDamageMod
-//rPercentMagicPenetrationMod
-//PercentLifeStealMod
-//rFlatArmorPenetrationMod
-//PercentPhysicalDamageMod
-
 test('get rune page status by tag PercentCritChanceMod', ()=> {
 	let tag = "PercentCritChanceMod";
 	let stats = {"critChance": 0.2};
@@ -112,7 +104,7 @@ test('get rune page status by tag PercentAttackSpeedMod', ()=> {
 })
 
 test('get rune page status by tag FlatHPPoolMod', ()=> {
-	//by percent
+	
 	let tag = "FlatHPPoolMod";
 	let stats = {"health": 340};
 	let rune = {"FlatHPPoolMod": 6.25}
@@ -123,7 +115,7 @@ test('get rune page status by tag FlatHPPoolMod', ()=> {
 })
 
 test('get rune page status by tag FlatMagicDamageMod', ()=> {
-	//by percent
+
 	let tag = "FlatMagicDamageMod";
 	let stats = {"ablity": 7};
 	let rune = {"FlatMagicDamageMod": 2.5}
@@ -134,7 +126,7 @@ test('get rune page status by tag FlatMagicDamageMod', ()=> {
 })
 
 test('get rune page status by tag FlatMovementSpeedMod', ()=> {
-	//by percent
+
 	let tag = "FlatMovementSpeedMod";
 	let stats = {"movementSpeed": 325};
 	let rune = {"FlatMovementSpeedMod": 1.5}
@@ -155,3 +147,126 @@ test('get rune page status by tag rPercentCooldownMod', ()=> {
 	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
 
 })
+
+
+test('get rune page status by tag rPercentMovementSpeedModPerLevel', ()=> {
+	//by percent
+	let tag = "rPercentMovementSpeedModPerLevel";
+	let stats = {"MovementSpeedPercent": 0};
+	let rune = {"rPercentMovementSpeedModPerLevel": 0.002}
+	let count = 5
+	let newStats = {"MovementSpeedPercent": 0.01}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rPercentMagicPenetrationModPerLevel', ()=> {
+
+	let tag = "rPercentMagicPenetrationModPerLevel";
+	let stats = {"MagicPenetrationPercentPerLevel": 0};
+	let rune = {"rPercentMagicPenetrationModPerLevel": 0.003}
+	let count = 4
+	let newStats = {"MagicPenetrationPercentPerLevel": 0.012}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rPercentCooldownModPerLevel', ()=> {
+	//by percent
+	let tag = "rPercentCooldownModPerLevel";
+	let stats = {"CooldownPercentPerLevel": 0};
+	let rune = {"rPercentCooldownModPerLevel": 0.001}
+	let count = 5
+	let newStats = {"CooldownPercentPerLevel": 0.005}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rPercentAttackSpeedModPerLevel', ()=> {
+	//by percent
+	let tag = "rPercentAttackSpeedModPerLevel";
+	let stats = {"AttackSpeedPercentPerLevel": 0};
+	let rune = {"rPercentAttackSpeedModPerLevel": 0.002}
+	let count = 10
+	let newStats = {"AttackSpeedPercentPerLevel": 0.02}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatPhysicalDamageModPerLevel', ()=> {
+	let tag = "rFlatPhysicalDamageModPerLevel";
+	let stats = {"PhysicalDamagePerLevel": 0};
+	let rune = {"rFlatPhysicalDamageModPerLevel": 0.95}
+	let count = 8
+	let newStats = {"PhysicalDamagePerLevel": 7.6}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatMovementSpeedModPerLevel', ()=> {
+	let tag = "rFlatMovementSpeedModPerLevel";
+	let stats = {"MovementSpeedPerLevel": 0};
+	let rune = {"rFlatMovementSpeedModPerLevel": 3}
+	let count = 2
+	let newStats = {"MovementSpeedPerLevel": 6}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatMagicPenetrationModPerLevel', ()=> {
+	let tag = "rFlatMagicPenetrationModPerLevel";
+	let stats = {"MagicPenetrationPerLevel": 0};
+	let rune = {"rFlatMagicPenetrationModPerLevel": 1}
+	let count = 1
+	let newStats = {"MagicPenetrationPerLevel": 1}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatMagicDamageModPerLevel', ()=> {
+	let tag = "rFlatMagicDamageModPerLevel";
+	let stats = {"MagicDamagePerLevel": 0.5};
+	let rune = {"rFlatMagicDamageModPerLevel": 1.95}
+	let count = 10
+	let newStats = {"MagicDamagePerLevel": 20}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatHPModPerLevel', ()=> {
+	let tag = "rFlatHPModPerLevel";
+	let stats = {"HealthPerLevel": 0};
+	let rune = {"rFlatHPModPerLevel": 0.95}
+	let count = 8
+	let newStats = {"HealthPerLevel": 7.6}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatCritDamageModPerLevel', ()=> {
+	let tag = "rFlatCritDamageModPerLevel";
+	let stats = {"CritDamagePerLevel": 0};
+	let rune = {"rFlatCritDamageModPerLevel": 0.01}
+	let count = 2
+	let newStats = {"CritDamagePerLevel": 2}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatCritChanceModPerLevel', ()=> {
+	let tag = "rFlatCritChanceModPerLevel";
+	let stats = {"CritChancePerLevel": 0};
+	let rune = {"rFlatCritChanceModPerLevel": 0.01}
+	let count = 3
+	let newStats = {"CritChancePerLevel": 3}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+test('get rune page status by tag rFlatArmorModPerLevel', ()=> {
+	let tag = "rFlatArmorModPerLevel";
+	let stats = {"ArmorPerLevel": 0};
+	let rune = {"rFlatArmorModPerLevel": 0.5}
+	let count = 8
+	let newStats = {"ArmorPerLevel": 4}
+	expect(helper.GetSingleRunePageStatsDetails(tag, stats, rune, count)).toMatchObject(newStats);
+})
+
+//PercentHPPoolMod
+//rFlatMagicPenetrationMod
+//PercentCritDamageMod
+//rPercentMagicPenetrationMod
+//PercentLifeStealMod
+//rFlatArmorPenetrationMod
+//PercentPhysicalDamageMod
+
+
