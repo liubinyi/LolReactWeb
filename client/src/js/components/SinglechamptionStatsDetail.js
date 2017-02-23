@@ -90,7 +90,7 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					<h6> Choose Your  </h6>
 					<h6> level frist! </h6>
 				</div>
-				<div className="col-md-2 levelButton">
+				<div className="col-md-2 col-sm-12 levelButton">
 					<div className="level">
 						<h6> Lvl {this.props.champAbility.level} </h6>
 					 	<Button onClick={this.levelUp.bind(this)} bsStyle="success"> + </Button>
@@ -98,7 +98,7 @@ export default class SinglechamptionStatsDetail extends React.Component {
 				 	</div>
 					<ImageIcon championKey={this.props.champAbility.key} loadFullChampImg={true} />
 				</div>
-				<div className="col-md-3">
+				<div className="col-md-3 col-sm-12">
 					<table className="table table-condensed">
 						<thead>
 					      <tr>
@@ -111,12 +111,12 @@ export default class SinglechamptionStatsDetail extends React.Component {
 					    </tbody>
 					</table>
 				</div>
-				<div className="col-md-3">
+				<div className="col-md-3 col-sm-12">
 					<RunePageDetails runeDetails={runePageDetails}/>
 					<h6> Pick Your Item To Create Best Build </h6>
 					<ItemSixGrid />
 				</div>
-				<div className="col-md-3 itemDescription">
+				<div className="col-md-3 col-sm-12 itemDescription">
 					<SingleItemStatsDetail />
 				</div>				
 			</div>

@@ -55,9 +55,7 @@ export default class SearchBox extends React.Component {
 	render()
 	{
 		const {summonerInfo, championStats} = this.props;
-		const divStyle = {
-			  display: 'inline-block'
-		}
+		
 
 
 
@@ -68,14 +66,14 @@ export default class SearchBox extends React.Component {
 	      		<div className="col-md-1">
 
 				</div>
-				<div className="col-md-3 introStyle">
+				<div className="col-md-3 col-sm-12 introStyle">
 					<p id="InvalidInput">Invalid summoner Name.</p>
 					<form>
 						<input type="text" placeholder="Your summoner name..." ref="createInput" className="inputBox"/>
 						<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Load</button>
 					</form>
 				</div>
-				<div className="col-md-7">
+				<div className="col-md-7 col-sm-12">
 			      	<TypeWriter typing={1} minDelay={1}>
 			      		<div className="introStyle">
 			      			<center>$: Welcome To YasuoGG, here is a quick explanation on how it works!<br />
@@ -97,19 +95,18 @@ export default class SearchBox extends React.Component {
 				<div className="col-md-1">
 				</div>
 				<div>
-				<div className="col-md-3 introStyle">
+				<div className="col-md-3 introStyle col-sm-12">
 					<form>
 						<input type="text" placeholder="Your summoner name..." ref="createInput" className="inputBox"/>
 						<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Load</button>
 					</form>
 				</div>
-				<div className="col-md-1">
-				</div>
+				
 				<div>
-				<div className="col-md-1 introStyle" style={divStyle}>
+				<div className="col-md-1 col-sm-1 introStyle" >
 					<ImageIcon iconId={summonerInfo.profileIconId}/>
 				</div>
-				<div className="col-md-5 introStyle" style={divStyle}>
+				<div className="col-md-6 col-sm-11 introStyle" >
 					<p>{summonerInfo.name} ,Level {summonerInfo.summonerLevel}, LastPlayed: {this.getModifiedDate(summonerInfo.revisionDate)}</p>
 					<RunePage buttonClick={this.getSummonerRunePage.bind(this)} summonerId={summonerInfo.id}/>
 				</div>

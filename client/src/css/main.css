@@ -15,9 +15,16 @@ body {
 
 @media (max-width: 768px) {
   .search {
-    height: 350px;
+    height: 550px;
 	}
-  
+}
+
+.profileStyle {
+	background-repeat: no-repeat;
+	background-size:100% auto;
+	float: left;
+	max-width: 50px;
+	max-height: 50px;
 }
 
 .footer {
@@ -38,6 +45,16 @@ body {
 	margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+  .btn {
+  	font-size:8px !important;
+  }
+}
+
+.leveldetails {
+	float: left;
+}
+
 .background {
 	background-color: black;
 }
@@ -54,6 +71,11 @@ body {
     border: 1px solid rgba(127,255,255,0.3);
     background-color: rgba(0,127,127,0.3);
     text-align: center;
+}
+@media (max-width: 768px) {
+  .introStyle {
+  	font-size: 0.9rem;
+  }
 }
 
 .sectionStyle {

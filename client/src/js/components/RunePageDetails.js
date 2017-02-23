@@ -26,10 +26,10 @@ export default class RunePageDetails extends React.Component {
   			 <div className="row">
   			 	<table className="table table-condensed">
   			 		<thead>
-					      <tr>
-					        <th>Rune Attributes</th>
-					        <th>Value</th>
-					      </tr>
+					    <tr>
+					      <th> Rune Attributes</th>
+					      <th> Value</th>
+					    </tr>
 				    </thead>
 				    <tbody>
 				    	{runeGraphs}

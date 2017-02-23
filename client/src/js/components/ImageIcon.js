@@ -30,7 +30,7 @@ export default class ImageIcon extends React.Component {
 		return (
 			<div>
 				{ifRenderProfile(				
-					<img src={profileUrl} style={profileStyle} />				
+					<img src={profileUrl} className="profileStyle"/>				
 				)}
 
 				{ifRenderChamption(
