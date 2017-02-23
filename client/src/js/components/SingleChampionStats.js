@@ -47,7 +47,7 @@ export default class SingleChampionStats extends React.Component {
 		);
 
 		const mainDivStyle = {
-			 	 width: '500',
+			 	 
 			 	 backgroundColor:'black',
 			 	 float : 'left'
 		}

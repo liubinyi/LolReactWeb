@@ -45,7 +45,6 @@ export default class SingleItemStats extends React.Component {
 		);
 
 		const mainDivStyle = {
-			 	 width: '500',
 			 	 backgroundColor:'black',
 			 	 float: 'right'
 

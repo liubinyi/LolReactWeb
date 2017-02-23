@@ -89,7 +89,7 @@ export default class ChampionStats extends React.Component {
 				<div className="row sectionStyle">
 					<div className="col-md-1">
 					</div>
-					<div className="col-md-5">
+					<div className="col-md-5 col-sm-12">
 						<SingleChampionStats 
 							championStatsInfo={championStats.championStatsInfo}
 							filteredChamptionStatsInfo={championStats.filteredChamptionStatsInfo}
@@ -97,9 +97,8 @@ export default class ChampionStats extends React.Component {
 							hover= {this.changeOpacity.bind(this)}
 						/>
 					</div>
-					<div className="col-md-1">
-					</div>
-					<div className="col-md-4">
+					
+					<div className="col-md-5">
 						<SingleItemStats
 							itemStatsInfo={championStats.itemStatsInfo}
 							filteredItemStatsInfo={championStats.filteredItemStatsInfo}
