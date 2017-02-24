@@ -52,4 +52,12 @@
 ##local Server
 * http://localhost:8080
 
+## deployment
+* cd my-project/
+* git init
+* heroku git:remote -a appname
+* git add .
+* git commit -am "something"
+* git push heroku master
+
 
