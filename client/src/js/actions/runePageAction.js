@@ -6,7 +6,7 @@ export function fetchSingleRuneStats(runeId) {
 
   return function(dispatch) {
 
-  	const url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/rune/" + runeId +"?locale=en_US&runeData=stats&api_key=2b7a32bd-a9e9-4610-9f46-01b8a881e632";
+  	const url = "https://lolyasuo.herokuapp.com/rune/"+runeId
 
     axios.get(url)
       .then((response) => {
