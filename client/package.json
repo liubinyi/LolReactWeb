@@ -16,11 +16,12 @@
     "babel-preset-stage-0": "^6.3.13",
     "lodash": "^4.17.2",
     "moment": "^2.17.1",
+    "moment-timezone": "^0.5.11",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
     "react-fontawesome": "^1.5.0",
-    "react-moment": "0.2.2",
+    "react-moment": "^0.2.2",
     "react-redux": "^5.0.2",
     "react-typewriter": "^0.4.1",
     "redux": "^3.5.2",
@@ -44,8 +45,8 @@
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --content-base --inline --hot",
     "test": "jest",
-    "postinstall" : "webpack -p",
-    "start" : "node server.js"
+    "postinstall": "webpack -p",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC"
