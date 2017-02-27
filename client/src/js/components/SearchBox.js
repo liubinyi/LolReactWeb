@@ -1,5 +1,5 @@
 import React from "react"
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import { connect } from "react-redux";
 
 import ImageIcon from './ImageIcon';
@@ -41,7 +41,7 @@ export default class SearchBox extends React.Component {
 	getModifiedDate(revisionDate) {
 		const date = new Date(revisionDate);
 		return (
-			<Moment format="YYYY/MM/DD HH:mm">{revisionDate}</Moment>
+			<p></p>
 		);
 	}
 
