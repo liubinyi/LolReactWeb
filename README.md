@@ -5,6 +5,7 @@
 * A single page web application that display league in champion and build status
 * front end built with react - redux
 * back end built with Golang
+* https://yasuogg.herokuapp.com/
 
 #How it works
 ![Screenshot](demo2.png)
