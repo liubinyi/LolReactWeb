@@ -42,7 +42,7 @@
     "react-test-renderer": "^15.4.2"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base --inline --hot",
     "test": "jest",
     "postinstall" : "webpack -p",
     "start" : "node server.js"
