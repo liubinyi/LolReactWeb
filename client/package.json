@@ -45,7 +45,9 @@
   },
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --content-base public --inline --hot",
-    "test": "jest"
+    "test": "jest",
+    "postinstall" : "webpack -p",
+    "start" : "node server.js"
   },
   "author": "",
   "license": "ISC"
