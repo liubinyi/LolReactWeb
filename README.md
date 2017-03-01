@@ -17,7 +17,6 @@
 * Choose Your Item from Item Sections and click Apply
 * Then Your build pacakges stats will show up
 ![Screenshot](demo2.png)
-![Screenshot](demo3.png =200x200)
 
 
 ============================
