@@ -7,15 +7,20 @@
 * back end built with Golang
 * WebSite URL  https://yasuogg.herokuapp.com/
 
+============================
+
 #How it works
-![Screenshot](demo2.png)
+![Screenshot](demo.png)
 * Load Your summoner Info by using the serach box
 * Choose the Rune Page that you would like to use and load it
 * Choose Your favorite Chamption from Chamption sections
 * Choose Your Item from Item Sections and click Apply
 * Then Your build pacakges stats will show up
-![Screenshot](demo.png)
+![Screenshot](demo2.png)
+![Screenshot](demo3.png)
 
+
+============================
 #Devopler Notes
 ##npm pacakages
 ### some dev notes for future reference
