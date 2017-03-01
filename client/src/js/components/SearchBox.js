@@ -12,6 +12,8 @@ import { Button } from 'react-bootstrap';
 
 import TypeWriter from 'react-typewriter';
 
+import moment from 'moment';
+
 
 @connect((store) => {
   return {
@@ -40,8 +42,9 @@ export default class SearchBox extends React.Component {
 
 	getModifiedDate(revisionDate) {
 		const date = new Date(revisionDate);
+		const LastPlayed = moment(date).format('MM/DD/YYYY hh:mm:ss A');
 		return (
-			<p></p>
+			<p>{LastPlayed}</p>
 		);
 	}
 
