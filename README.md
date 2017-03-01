@@ -19,7 +19,7 @@
 #Devopler Notes
 ##npm pacakages
 ### some dev notes for future reference
-``` npm init -y
+```npm init -y
 	npm i -S react react-dom
 	npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-react
 	react-hot-loader webpack webpack-dev-server
@@ -27,11 +27,10 @@
 	npm i --save lodash
 	npm install xregexp
 	touch webpack.config.js
-	touch index.html 
-```
+	touch index.html```
 
-##test pacakages
-### some test notes for future reference
+##test pacakages  
+### some test notes for future reference  
 ``` npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react 
  react-test-renderer
   npm install --save-dev babel-jest babel-polyfill
@@ -39,22 +38,22 @@
   npm install -g npm-check-updates
   ncu -u ```
 
-###additional configurations
+###additional configurations  
 * also need to add .babelrc file
 
-#run tests
+#run tests  
 * npm run test
 
 
-##kill npm dev server
+##kill npm dev server  
 * ps -ax | grep node
 * kill -9 <pid>
 * lsof -i tcp:3000 
 
-##local Server
+##local Server  
 * http://localhost:8080
 
-## deployment
+## deployment  
 * cd my-project/
 * git init
 * heroku git:remote -a appname
