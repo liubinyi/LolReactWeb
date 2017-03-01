@@ -2,43 +2,44 @@
 ============================
 
 ##INFO
-* A single page web application that display league in champion and build status
-* front end built with react - redux
+* A single page web application that generate build packages for summoners(users)
+* front end built with react-redux
 * back end built with Golang
-* https://yasuogg.herokuapp.com/
+* WebSite URL  https://yasuogg.herokuapp.com/
 
 #How it works
 ![Screenshot](demo2.png)
-* Load Your summoner Info
-* Choose Your Rune Page
-* Load rune page
-* Choose Your Mastery Page
-* Load Mastery Page
-* Choose Your favorite Chamption
-* Choose Your Item and Apply the effect
-* Choose Your Build
+* Load Your summoner Info by using the serach box
+* Choose the Rune Page that you would like to use and load it
+* Choose Your favorite Chamption from Chamption sections
+* Choose Your Item from Item Sections and click Apply
+* Then Your build pacakges stats will show up
 ![Screenshot](demo.png)
 
-#npm pacakages
-* npm init -y
-* npm i -S react react-dom
-* npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-react
-* react-hot-loader webpack webpack-dev-server
-* npm i -g webpack webpack-dev-server
-* npm i --save lodash
-* npm install xregexp
-* touch webpack.config.js
-* touch index.html
+#Devopler Notes
+##npm pacakages
+### some dev notes for future reference
+``` npm init -y
+	npm i -S react react-dom
+	npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-react
+	react-hot-loader webpack webpack-dev-server
+	npm i -g webpack webpack-dev-server
+	npm i --save lodash
+	npm install xregexp
+	touch webpack.config.js
+	touch index.html 
+```
 
-#test pacakages
-* npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react 
+##test pacakages
+### some test notes for future reference
+``` npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react 
  react-test-renderer
-* npm install --save-dev babel-jest babel-polyfill
-* npm install --save-dev enzyme react-addons-test-utils
-* npm install -g npm-check-updates
-* ncu -u
+  npm install --save-dev babel-jest babel-polyfill
+  npm install --save-dev enzyme react-addons-test-utils
+  npm install -g npm-check-updates
+  ncu -u ```
 
-#additional configurations
+###additional configurations
 * also need to add .babelrc file
 
 #run tests
