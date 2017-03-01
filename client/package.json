@@ -44,7 +44,7 @@
     "react-test-renderer": "^15.4.2"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base --inline --hot",
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base public --inline --hot",
     "test": "jest"
   },
   "author": "",
