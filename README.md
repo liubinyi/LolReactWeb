@@ -10,14 +10,14 @@
 ============================
 
 #How it works
-![Screenshot](demo.png)
+![Screenshot](demo.png )
 * Load Your summoner Info by using the serach box
 * Choose the Rune Page that you would like to use and load it
 * Choose Your favorite Chamption from Chamption sections
 * Choose Your Item from Item Sections and click Apply
 * Then Your build pacakges stats will show up
 ![Screenshot](demo2.png)
-![Screenshot](demo3.png)
+![Screenshot](demo3.png =200x200)
 
 
 ============================
