@@ -6,6 +6,5 @@ before_script: cd client
 
 install:
   - npm install
-  - npm install jest-cli
 script:
-  - npm run test
+  - npm test
