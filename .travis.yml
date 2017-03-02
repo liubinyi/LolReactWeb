@@ -6,3 +6,4 @@ before_script: cd client
 
 script:
   - npm install
+  - npm run test
