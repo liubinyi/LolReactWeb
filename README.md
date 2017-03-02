@@ -1,5 +1,6 @@
 # LolReactWeb
 ============================
+[![Build Status](https://travis-ci.org/liubinyi/LolReactWeb.svg?branch=master)](https://travis-ci.org/liubinyi/LolReactWeb)
 
 ##INFO
 * A single page web application that generate build packages for summoners(users)
