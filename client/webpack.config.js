@@ -1,6 +1,7 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
+process.traceDeprecation = true;
 
 module.exports = {
   context: path.join(__dirname, "src"),
@@ -12,7 +13,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['react', 'es2015', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
@@ -21,7 +22,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/public/",
-    filename: "client.min.js"
+    filename: "client.min.js",
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
