@@ -29,7 +29,7 @@ export default class SearchBox extends React.Component {
 		const summonerName = this.refs.createInput.value;
 		//has to use es5 cause the library
 		var XRegExp = require('xregexp');
-		
+
 	    const patt = new XRegExp('^[0-9\\p{L} _\\.]+$');
 
 		if (patt.test(summonerName)) {
@@ -58,13 +58,13 @@ export default class SearchBox extends React.Component {
 	render()
 	{
 		const {summonerInfo, championStats} = this.props;
-		
+
 
 
 
 		if (summonerInfo.id == 0) {
 	      return (
-	     	
+
 	      	<div className="row search">
 	      		<div className="col-md-1">
 
@@ -79,10 +79,10 @@ export default class SearchBox extends React.Component {
 				<div className="col-md-7 col-sm-12">
 			      	<TypeWriter typing={1} minDelay={1}>
 			      		<div className="introStyle">
-			      			<center>$: Welcome To YasuoGG, here is a quick explanation on how it works!<br />
-			      			1. Load Your summonerInfo and Choose a rune page you would like to apply.<br />
-			      			2. Choose your chamption and set your chamption level and then choose a Item from right panel.<br />
-			      			3. Click "Apply Effect" to build Your Best Build! <span className="cursor"> |</span></center>
+			      			<center>$: Welcome to YasuoGG, here is a quick explanation on how it works!<br />
+			      			1. Load your summonerInfo and choose a rune page you would like to apply.<br />
+			      			2. Choose your champion and set your champion level and then choose a item from right panel.<br />
+			      			3. Click "Apply Effect" to build your best build! <span className="cursor"> |</span></center>
 			      			<br />
 			      		</div>
 	      			</TypeWriter>
@@ -104,7 +104,7 @@ export default class SearchBox extends React.Component {
 						<button className="searchButton" onClick={this.getSummonerInfo.bind(this)}>Load</button>
 					</form>
 				</div>
-				
+
 				<div>
 				<div className="col-md-1 col-sm-1 introStyle" >
 					<ImageIcon iconId={summonerInfo.profileIconId}/>
