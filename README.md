@@ -17,7 +17,7 @@
 * Choose Your favorite Chamption from Chamption sections
 * Choose Your Item from Item Sections and click Apply
 * Then Your build pacakges stats will show up
-![Screenshot](demo2.png)
+![Screenshot](demo3.png)
 
 
 ============================
@@ -36,7 +36,7 @@
 
 ##test pacakages  
 ### some test notes for future reference  
-``` npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react 
+``` npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react
  react-test-renderer
   npm install --save-dev babel-jest babel-polyfill
   npm install --save-dev enzyme react-addons-test-utils
@@ -53,7 +53,7 @@
 ##kill npm dev server  
 * ps -ax | grep node
 * kill -9 <pid>
-* lsof -i tcp:3000 
+* lsof -i tcp:3000
 
 ##local Server  
 * http://localhost:8080
@@ -65,5 +65,3 @@
 * git add .
 * git commit -am "something"
 * git push heroku master
-
-
