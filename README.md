@@ -2,7 +2,7 @@
 ============================
 [![Build Status](https://travis-ci.org/liubinyi/LolReactWeb.svg?branch=master)](https://travis-ci.org/liubinyi/LolReactWeb)
 
-##INFO
+## INFO
 * A single page web application that generate build packages for summoners(users)
 * front end built with react-redux
 * back end built with Golang
@@ -10,7 +10,7 @@
 
 ============================
 
-#How it works
+# How it works
 ![Screenshot](demo.png )
 * Load Your summoner Info by using the serach box
 * Choose the Rune Page that you would like to use and load it
@@ -21,8 +21,8 @@
 
 
 ============================
-#Devopler Notes
-##npm pacakages
+# Devopler Notes
+## npm pacakages
 ### some dev notes for future reference
 ```npm init -y
 	npm i -S react react-dom
@@ -34,7 +34,7 @@
 	touch webpack.config.js
 	touch index.html```
 
-##test pacakages  
+## test pacakages  
 ### some test notes for future reference  
 ``` npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react
  react-test-renderer
@@ -43,19 +43,19 @@
   npm install -g npm-check-updates
   ncu -u ```
 
-###additional configurations  
+### additional configurations  
 * also need to add .babelrc file
 
-#run tests  
+# run tests  
 * npm run test
 
 
-##kill npm dev server  
+## kill npm dev server  
 * ps -ax | grep node
 * kill -9 <pid>
 * lsof -i tcp:3000
 
-##local Server  
+## local Server  
 * http://localhost:8080
 
 ## deployment  
