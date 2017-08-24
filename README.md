@@ -1,27 +1,24 @@
-# LolReactWeb
-============================
+# LolReactWeb  
 [![Build Status](https://travis-ci.org/liubinyi/LolReactWeb.svg?branch=master)](https://travis-ci.org/liubinyi/LolReactWeb)
 
-## INFO
+## INFO  
 * A single page web application that generate build packages for summoners(users)
 * front end built with react-redux
 * back end built with Golang
 * WebSite URL  https://yasuogg.herokuapp.com/
 
-============================
 
-# How it works
+# How it works  
 ![Screenshot](demo.png )
-* Load Your summoner Info by using the serach box
+* Load Your summoner Info by using the search box
 * Choose the Rune Page that you would like to use and load it
-* Choose Your favorite Chamption from Chamption sections
+* Choose Your favorite chamption from the chamption list
 * Choose Your Item from Item Sections and click Apply
-* Then Your build pacakges stats will show up
+* Then Your build package will show up
 ![Screenshot](demo3.png)
 
 
-============================
-# Devopler Notes
+# Developer Notes  
 ## npm pacakages
 ### some dev notes for future reference
 ```npm init -y
@@ -32,16 +29,18 @@
 	npm i --save lodash
 	npm install xregexp
 	touch webpack.config.js
-	touch index.html```
+	touch index.html
+```
 
-## test pacakages  
+## test packages  
 ### some test notes for future reference  
 ``` npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react
  react-test-renderer
   npm install --save-dev babel-jest babel-polyfill
   npm install --save-dev enzyme react-addons-test-utils
   npm install -g npm-check-updates
-  ncu -u ```
+  ncu -u
+```
 
 ### additional configurations  
 * also need to add .babelrc file
