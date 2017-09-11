@@ -7,7 +7,7 @@ export default class ItemImageIcon extends React.Component {
 
 		const renderIf = RenderIf();
 		const ifRenderItem = renderIf(this.props.itemKey != null);
-		const itemUrl = 'http://ddragon.leagueoflegends.com/cdn/7.17.1/img/item/'+ this.props.itemKey +'.png';
+		const itemUrl = 'https://ddragon.leagueoflegends.com/cdn/7.17.1/img/item/'+ this.props.itemKey +'.png';
 		const imageStyle = {
 			  width: '50',
 			  height: '50',

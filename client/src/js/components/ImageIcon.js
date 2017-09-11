@@ -11,9 +11,9 @@ export default class ImageIcon extends React.Component {
 		const ifRenderChamption = renderIf(this.props.championKey != null && this.props.loadFullChampImg == null);
 		const ifRenderFullChamp = renderIf(this.props.loadFullChampImg == true);
 
-		const profileUrl = 'http://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/'+ this.props.iconId +'.png';
-		const championUrl = 'http://ddragon.leagueoflegends.com/cdn/7.17.1/img/champion/'+ this.props.championKey +'.png';
-		const fullChampionUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+ this.props.championKey + '_0' +'.jpg';
+		const profileUrl = 'https://ddragon.leagueoflegends.com/cdn/7.17.1/img/profileicon/'+ this.props.iconId +'.png';
+		const championUrl = 'https://ddragon.leagueoflegends.com/cdn/7.17.1/img/champion/'+ this.props.championKey +'.png';
+		const fullChampionUrl = 'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+ this.props.championKey + '_0' +'.jpg';
 
 
 		const profileStyle = {
