@@ -6,7 +6,7 @@ export function fetchSummoner(summonerName) {
   return function(dispatch) {
     axios.get("https://lolyasuo.herokuapp.com/summonerName/"+name)
       .then((response) => {
-        dispatch({type: "LOAD_DATA_SUCCESS", payload: response.data[name.toLowerCase()]})
+        dispatch({type: "LOAD_DATA_SUCCESS", payload: response.data})
       })
       .catch((err) => {
         dispatch({type: "LOAD_DATA_ERROR", payload: err})
