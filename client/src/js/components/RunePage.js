@@ -26,7 +26,7 @@ import _ from 'lodash';
 export default class RunePage extends React.Component {
 
 	generateRuneStats(runePage) {
-		//get slots here 
+		//get slots here
 		const slot = runePage.slots;
 
 		//create a hash with count of slot and it's id
@@ -104,7 +104,7 @@ export default class RunePage extends React.Component {
 		}
 
 		const summonerId = this.props.summonerId;
-		const runePages = this.props.summonerRunePage[summonerId].pages.map(runePage =>
+		const runePages = this.props.summonerRunePage.pages.map(runePage =>
 	   			 <div id={runePage.id} key={runePage.id} rune={runePage} className="runePage">
 	   			 	<Button onClick={this.generateRuneStats.bind(this, runePage)} bsStyle="success">{runePage.name} </Button>
 				 </div>
@@ -115,8 +115,8 @@ export default class RunePage extends React.Component {
 
 		return (
 			<div>
-				{runePages}			
-				{ifRenderRunePageDetails(		
+				{runePages}
+				{ifRenderRunePageDetails(
 					<RunePageDetails runeDetails={runePageDetails}/>
 				)}
 
